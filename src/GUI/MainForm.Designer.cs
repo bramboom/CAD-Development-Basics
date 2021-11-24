@@ -448,7 +448,6 @@ namespace GUI
             this.buttonBuild.TabIndex = 3;
             this.buttonBuild.Text = "Построить";
             this.buttonBuild.UseVisualStyleBackColor = true;
-            this.buttonBuild.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonClear
             // 
@@ -458,6 +457,7 @@ namespace GUI
             this.buttonClear.TabIndex = 4;
             this.buttonClear.Text = "Очистить";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // LinkPinsPlugin
             // 

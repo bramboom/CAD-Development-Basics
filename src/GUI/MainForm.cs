@@ -14,9 +14,7 @@ namespace GUI
 {
     public partial class LinkPinsPlugin : Form
     {
-        private LinkPinParameter _parameter;
-
-        private Dictionary<LinkPinParameter, TextBox> _textBoxesParameters;
+        private LinkPinParameter _parameter = new LinkPinParameter();
         public LinkPinsPlugin()
         {
             InitializeComponent();
@@ -25,9 +23,29 @@ namespace GUI
             pictureBox.Image = Image.FromFile(path + "/img/img.JPG");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textbox"></param>
+        private void ClearTextBox(TextBox textbox)
         {
-            MessageBox.Show("Один или несколько параметров введены неверно:\nДлина стержня (А)", "Warning");
+            textbox.Text = "";
+            textbox.BackColor = Color.White;
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearTextBox(textBoxRodLenght);
+            ClearTextBox(textBoxHeadLenght);
+            ClearTextBox(textBoxHoleRadius);
+            ClearTextBox(textBoxRodChamferDepth);
+            ClearTextBox(textBoxHeadChamferDepth);
+            ClearTextBox(textBoxRodAngleDepth);
+            ClearTextBox(textBoxHeadAngleDepth);
+            ClearTextBox(textBoxHoleDistance);
+            ClearTextBox(textBoxRodRadius);
+            ClearTextBox(textBoxHeadRadius);
+            _parameter = new LinkPinParameter();
         }
     }
 }
