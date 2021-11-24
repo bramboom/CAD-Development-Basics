@@ -68,7 +68,7 @@ namespace Core
                 const double minValue = 11.6;
                 const double maxValue = 60.0;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _rodLenght = value;
@@ -87,9 +87,9 @@ namespace Core
                 double maxValue = 8.0;
 
                 if (!double.IsNaN(RodLenght))
-                    maxValue = RodLenght * 2 / 5;
+                    maxValue = RodLenght * 0.4;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _headLenght = value;
@@ -110,7 +110,7 @@ namespace Core
                 if (!double.IsNaN(RodRadius))
                     maxValue = RodLenght / 2;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _holeRadius = value;
@@ -131,7 +131,7 @@ namespace Core
                 if (!double.IsNaN(RodLenght))
                     maxValue = RodLenght / 2;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _rodChamferDepth = value;
@@ -152,7 +152,7 @@ namespace Core
                 if (!double.IsNaN(HoleRadius))
                     maxValue = HoleRadius / 2;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _headChamferDepth = value;
@@ -179,7 +179,7 @@ namespace Core
                         maxValue = RodLenght - HoleRadius * 3 / 2;
                 }
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _holeDistance = value;
@@ -197,7 +197,7 @@ namespace Core
                 const double minValue = 0.0;
                 const double maxValue = 30.0;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _rodAngleDepth = value;
@@ -215,7 +215,7 @@ namespace Core
                 const double minValue = 0.0;
                 const double maxValue = 45.0;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _headAngleDepth = value;
@@ -236,7 +236,7 @@ namespace Core
                 if (!double.IsNaN(HeadRadius))
                     maxValue = HeadRadius * 3 / 4;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _rodRadius = value;
@@ -254,7 +254,7 @@ namespace Core
                 const double minValue = 5.0;
                 const double maxValue = 50.0;
 
-                if (Validator(value, minValue, maxValue))
+                if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
                 _headRadius = value;
@@ -277,6 +277,63 @@ namespace Core
                 return false;
 
             return true;
+        }
+
+        public void SetValue(Parameters parameter, double value)
+        {
+            switch (parameter)
+            {
+                case Parameters.RodLength:
+                {
+                    RodLenght = value;
+                    break;
+                }
+                case Parameters.HeadLength:
+                {
+                    HeadLenght = value;
+                    break;
+                }
+                case Parameters.HoleRadius:
+                {
+                    HoleRadius = value;
+                    break;
+                }
+                case Parameters.RodChamfetDepth:
+                {
+                    RodChamferDepth = value;
+                    break;
+                }
+                case Parameters.HeadChamferDepth:
+                {
+                    HeadChamferDepth = value;
+                    break;
+                }
+                case Parameters.RodAngleDepth:
+                {
+                    RodAngleDepth = value;
+                    break;
+                }
+                case Parameters.HeadAngleDepth:
+                {
+                    HeadAngleDepth = value;
+                    break;
+                }
+                case Parameters.HoleDistance:
+                {
+                    HoleDistance = value;
+                    break;
+                }
+                case Parameters.RodRadius:
+                {
+                    RodRadius = value;
+                    break;
+                }
+                case Parameters.HeadRadius:
+                {
+                    HeadRadius = value;
+                    break;
+                }
+            }
         }
     }
 }

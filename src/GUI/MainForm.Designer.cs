@@ -244,6 +244,7 @@ namespace GUI
             this.textBoxHeadRadius.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeadRadius.TabIndex = 5;
             this.textBoxHeadRadius.Text = "14";
+            this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.textBoxHeadRadius_TextChanged);
             // 
             // textBoxRodRadius
             // 
@@ -253,6 +254,7 @@ namespace GUI
             this.textBoxRodRadius.Size = new System.Drawing.Size(100, 20);
             this.textBoxRodRadius.TabIndex = 4;
             this.textBoxRodRadius.Text = "10";
+            this.textBoxRodRadius.TextChanged += new System.EventHandler(this.textBoxRodRadius_TextChanged);
             // 
             // textBoxHoleDistance
             // 
@@ -262,6 +264,7 @@ namespace GUI
             this.textBoxHoleDistance.Size = new System.Drawing.Size(100, 20);
             this.textBoxHoleDistance.TabIndex = 3;
             this.textBoxHoleDistance.Text = "5";
+            this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.textBoxHoleDistance_TextChanged);
             // 
             // textBoxHoleRadius
             // 
@@ -270,9 +273,10 @@ namespace GUI
             this.textBoxHoleRadius.Name = "textBoxHoleRadius";
             this.textBoxHoleRadius.Size = new System.Drawing.Size(100, 20);
             this.textBoxHoleRadius.TabIndex = 2;
-            this.textBoxHoleRadius.Text = "4";
+            this.textBoxHoleRadius.Text = "2";
             this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать 1/2 параметра I (радиус стержня" +
         ").");
+            this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.textBoxHoleRadius_TextChanged);
             // 
             // textBoxHeadLenght
             // 
@@ -284,6 +288,7 @@ namespace GUI
             this.textBoxHeadLenght.Text = "4";
             this.toolTip.SetToolTip(this.textBoxHeadLenght, "Параметр B (длина шляпки) не должен превышать 2/5 параметра A (длина стержня).\r\n\r" +
         "\n");
+            this.textBoxHeadLenght.TextChanged += new System.EventHandler(this.textBoxHeadLenght_TextChanged);
             // 
             // textBoxRodLenght
             // 
@@ -293,6 +298,7 @@ namespace GUI
             this.textBoxRodLenght.Size = new System.Drawing.Size(100, 20);
             this.textBoxRodLenght.TabIndex = 0;
             this.textBoxRodLenght.Text = "20";
+            this.textBoxRodLenght.TextChanged += new System.EventHandler(this.textBoxRodLenght_TextChanged);
             // 
             // toolTip
             // 
@@ -361,6 +367,7 @@ namespace GUI
             this.textBoxHeadAngleDepth.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeadAngleDepth.TabIndex = 3;
             this.textBoxHeadAngleDepth.Text = "15";
+            this.textBoxHeadAngleDepth.TextChanged += new System.EventHandler(this.textBoxHeadAngleDepth_TextChanged);
             // 
             // label19
             // 
@@ -401,6 +408,7 @@ namespace GUI
             this.textBoxRodAngleDepth.Size = new System.Drawing.Size(100, 20);
             this.textBoxRodAngleDepth.TabIndex = 2;
             this.textBoxRodAngleDepth.Text = "15";
+            this.textBoxRodAngleDepth.TextChanged += new System.EventHandler(this.textBoxRodAngleDepth_TextChanged);
             // 
             // label15
             // 
@@ -419,7 +427,8 @@ namespace GUI
             this.textBoxHeadChamferDepth.Name = "textBoxHeadChamferDepth";
             this.textBoxHeadChamferDepth.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeadChamferDepth.TabIndex = 1;
-            this.textBoxHeadChamferDepth.Text = "0.5";
+            this.textBoxHeadChamferDepth.Text = "0,5";
+            this.textBoxHeadChamferDepth.TextChanged += new System.EventHandler(this.textBoxHeadChamferDepth_TextChanged);
             // 
             // label16
             // 
@@ -438,7 +447,8 @@ namespace GUI
             this.textBoxRodChamferDepth.Name = "textBoxRodChamferDepth";
             this.textBoxRodChamferDepth.Size = new System.Drawing.Size(100, 20);
             this.textBoxRodChamferDepth.TabIndex = 0;
-            this.textBoxRodChamferDepth.Text = "0.5";
+            this.textBoxRodChamferDepth.Text = "0,5";
+            this.textBoxRodChamferDepth.TextChanged += new System.EventHandler(this.textBoxRodChamferDepth_TextChanged);
             // 
             // buttonBuild
             // 
