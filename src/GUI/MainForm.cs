@@ -25,9 +25,9 @@ namespace GUI
         }
 
         /// <summary>
-        /// 
+        /// Отчищает содержимое всех TextBox
         /// </summary>
-        /// <param name="textbox"></param>
+        /// <param name="textbox">TextBox</param>
         private void ClearTextBox(TextBox textbox)
         {
             textbox.Text = "";
@@ -35,10 +35,10 @@ namespace GUI
         }
 
         /// <summary>
-        /// 
+        /// Помещаяет параметр из TextBox
         /// </summary>
-        /// <param name="textBox"></param>
-        /// <param name="parameter"></param>
+        /// <param name="textBox">TextBox</param>
+        /// <param name="parameter">параметр</param>
         private void GetValueFromTextBox(TextBox textBox, Parameters parameter)
         {
             textBox.BackColor = Color.White;
@@ -64,7 +64,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// 
+        /// Инициализирует дефолтные параметры
         /// </summary>
         private void InitParameters()
         {
@@ -98,7 +98,6 @@ namespace GUI
         private void textBoxRodLenght_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodLenght, Parameters.RodLength);
-            GetValueFromTextBox(textBoxHeadLenght, Parameters.HeadLength);
         }
 
         private void textBoxHeadLenght_TextChanged(object sender, EventArgs e)
@@ -144,6 +143,39 @@ namespace GUI
         private void textBoxHeadAngleDepth_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHeadAngleDepth, Parameters.HeadAngleDepth);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="error"></param>
+        /// <param name="textBox"></param>
+        /// <param name="errorName"></param>
+        private void AddError(ref string error, TextBox textBox, string errorName)
+        {
+            if (textBox.BackColor == Color.DarkSalmon)
+                error += errorName;
+        }
+
+        private void buttonBuild_Click(object sender, EventArgs e)
+        {
+            string error = "Параметры введены неверно:";
+            AddError(ref error, textBoxRodLenght, "\nДлина стержня");
+            AddError(ref error, textBoxHeadLenght, "\nДлина шляпки");
+            AddError(ref error, textBoxHoleRadius, "\nРадиус отверстия");
+            AddError(ref error, textBoxHoleDistance, "\nРастояние отверстия");
+            AddError(ref error, textBoxRodRadius, "\nРадиус стержня");
+            AddError(ref error, textBoxHeadRadius, "\nРадиус шляпки");
+            AddError(ref error, textBoxRodChamferDepth, "\nДлина фаски на стержне");
+            AddError(ref error, textBoxHeadChamferDepth, "\nДлина фаски на шляпке");
+            AddError(ref error, textBoxRodAngleDepth, "\nУгол фаски на стержне");
+            AddError(ref error, textBoxHeadAngleDepth, "\nУгол фаски на шляпке");
+
+            if (error != "Параметры введены неверно:")
+            {
+                MessageBox.Show(error, "Error");
+                return;
+            }
         }
     }
 }

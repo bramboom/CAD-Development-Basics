@@ -116,7 +116,7 @@ namespace GUI
             this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label12.Location = new System.Drawing.Point(282, 178);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 13);
+            this.label12.Size = new System.Drawing.Size(105, 17);
             this.label12.TabIndex = 17;
             this.label12.Text = "(от 5 до 50 см)";
             // 
@@ -126,7 +126,7 @@ namespace GUI
             this.label11.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label11.Location = new System.Drawing.Point(282, 150);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.Size = new System.Drawing.Size(105, 17);
             this.label11.TabIndex = 16;
             this.label11.Text = "(от 4 до 40 см)";
             // 
@@ -136,7 +136,7 @@ namespace GUI
             this.label10.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label10.Location = new System.Drawing.Point(282, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
+            this.label10.Size = new System.Drawing.Size(117, 17);
             this.label10.TabIndex = 15;
             this.label10.Text = "(от 1.6 до 10 см)";
             // 
@@ -146,7 +146,7 @@ namespace GUI
             this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label9.Location = new System.Drawing.Point(282, 94);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 13);
+            this.label9.Size = new System.Drawing.Size(109, 17);
             this.label9.TabIndex = 14;
             this.label9.Text = "(от 0.4 до 4 см)";
             // 
@@ -156,7 +156,7 @@ namespace GUI
             this.label8.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label8.Location = new System.Drawing.Point(282, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 13);
+            this.label8.Size = new System.Drawing.Size(97, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "(от 1 до 8 см)";
             // 
@@ -166,7 +166,7 @@ namespace GUI
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label7.Location = new System.Drawing.Point(282, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.Size = new System.Drawing.Size(125, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "(от 11.6 до 60 см)";
             // 
@@ -198,7 +198,7 @@ namespace GUI
             this.label4.Location = new System.Drawing.Point(6, 117);
             this.label4.MinimumSize = new System.Drawing.Size(154, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 17);
+            this.label4.Size = new System.Drawing.Size(204, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Расстояние до отверстия (F):";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -241,7 +241,7 @@ namespace GUI
             this.textBoxHeadRadius.BackColor = System.Drawing.Color.White;
             this.textBoxHeadRadius.Location = new System.Drawing.Point(176, 173);
             this.textBoxHeadRadius.Name = "textBoxHeadRadius";
-            this.textBoxHeadRadius.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeadRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadRadius.TabIndex = 5;
             this.textBoxHeadRadius.Text = "14";
             this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.textBoxHeadRadius_TextChanged);
@@ -251,7 +251,7 @@ namespace GUI
             this.textBoxRodRadius.BackColor = System.Drawing.Color.White;
             this.textBoxRodRadius.Location = new System.Drawing.Point(176, 145);
             this.textBoxRodRadius.Name = "textBoxRodRadius";
-            this.textBoxRodRadius.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRodRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodRadius.TabIndex = 4;
             this.textBoxRodRadius.Text = "10";
             this.textBoxRodRadius.TextChanged += new System.EventHandler(this.textBoxRodRadius_TextChanged);
@@ -261,7 +261,7 @@ namespace GUI
             this.textBoxHoleDistance.BackColor = System.Drawing.Color.White;
             this.textBoxHoleDistance.Location = new System.Drawing.Point(176, 117);
             this.textBoxHoleDistance.Name = "textBoxHoleDistance";
-            this.textBoxHoleDistance.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHoleDistance.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleDistance.TabIndex = 3;
             this.textBoxHoleDistance.Text = "5";
             this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.textBoxHoleDistance_TextChanged);
@@ -271,7 +271,7 @@ namespace GUI
             this.textBoxHoleRadius.BackColor = System.Drawing.Color.White;
             this.textBoxHoleRadius.Location = new System.Drawing.Point(176, 89);
             this.textBoxHoleRadius.Name = "textBoxHoleRadius";
-            this.textBoxHoleRadius.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHoleRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleRadius.TabIndex = 2;
             this.textBoxHoleRadius.Text = "2";
             this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать 1/2 параметра I (радиус стержня" +
@@ -283,7 +283,7 @@ namespace GUI
             this.textBoxHeadLenght.BackColor = System.Drawing.Color.White;
             this.textBoxHeadLenght.Location = new System.Drawing.Point(176, 61);
             this.textBoxHeadLenght.Name = "textBoxHeadLenght";
-            this.textBoxHeadLenght.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeadLenght.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadLenght.TabIndex = 1;
             this.textBoxHeadLenght.Text = "4";
             this.toolTip.SetToolTip(this.textBoxHeadLenght, "Параметр B (длина шляпки) не должен превышать 2/5 параметра A (длина стержня).\r\n\r" +
@@ -295,7 +295,7 @@ namespace GUI
             this.textBoxRodLenght.BackColor = System.Drawing.Color.White;
             this.textBoxRodLenght.Location = new System.Drawing.Point(176, 33);
             this.textBoxRodLenght.Name = "textBoxRodLenght";
-            this.textBoxRodLenght.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRodLenght.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodLenght.TabIndex = 0;
             this.textBoxRodLenght.Text = "20";
             this.textBoxRodLenght.TextChanged += new System.EventHandler(this.textBoxRodLenght_TextChanged);
@@ -335,7 +335,7 @@ namespace GUI
             this.label17.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label17.Location = new System.Drawing.Point(282, 116);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(149, 13);
+            this.label17.Size = new System.Drawing.Size(195, 17);
             this.label17.TabIndex = 21;
             this.label17.Text = "(не превышает 45 градусов)";
             // 
@@ -345,7 +345,7 @@ namespace GUI
             this.label13.Location = new System.Drawing.Point(6, 116);
             this.label13.MinimumSize = new System.Drawing.Size(164, 17);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(164, 17);
+            this.label13.Size = new System.Drawing.Size(190, 17);
             this.label13.TabIndex = 21;
             this.label13.Text = "Угол фаски на стержне (H):";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -356,7 +356,7 @@ namespace GUI
             this.label18.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label18.Location = new System.Drawing.Point(282, 88);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(149, 13);
+            this.label18.Size = new System.Drawing.Size(195, 17);
             this.label18.TabIndex = 20;
             this.label18.Text = "(не превышает 30 градусов)";
             // 
@@ -364,7 +364,7 @@ namespace GUI
             // 
             this.textBoxHeadAngleDepth.Location = new System.Drawing.Point(176, 116);
             this.textBoxHeadAngleDepth.Name = "textBoxHeadAngleDepth";
-            this.textBoxHeadAngleDepth.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeadAngleDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadAngleDepth.TabIndex = 3;
             this.textBoxHeadAngleDepth.Text = "15";
             this.textBoxHeadAngleDepth.TextChanged += new System.EventHandler(this.textBoxHeadAngleDepth_TextChanged);
@@ -375,7 +375,7 @@ namespace GUI
             this.label19.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label19.Location = new System.Drawing.Point(282, 60);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(92, 13);
+            this.label19.Size = new System.Drawing.Size(121, 17);
             this.label19.TabIndex = 19;
             this.label19.Text = "(от 0.1 до 2.5 см)";
             // 
@@ -385,7 +385,7 @@ namespace GUI
             this.label14.Location = new System.Drawing.Point(6, 88);
             this.label14.MinimumSize = new System.Drawing.Size(164, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(164, 17);
+            this.label14.Size = new System.Drawing.Size(191, 17);
             this.label14.TabIndex = 20;
             this.label14.Text = "Угол фаски на стержне (G):";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +396,7 @@ namespace GUI
             this.label20.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label20.Location = new System.Drawing.Point(282, 32);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 13);
+            this.label20.Size = new System.Drawing.Size(109, 17);
             this.label20.TabIndex = 18;
             this.label20.Text = "(от 0.2 до 5 см)";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -405,7 +405,7 @@ namespace GUI
             // 
             this.textBoxRodAngleDepth.Location = new System.Drawing.Point(176, 88);
             this.textBoxRodAngleDepth.Name = "textBoxRodAngleDepth";
-            this.textBoxRodAngleDepth.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRodAngleDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodAngleDepth.TabIndex = 2;
             this.textBoxRodAngleDepth.Text = "15";
             this.textBoxRodAngleDepth.TextChanged += new System.EventHandler(this.textBoxRodAngleDepth_TextChanged);
@@ -416,7 +416,7 @@ namespace GUI
             this.label15.Location = new System.Drawing.Point(6, 60);
             this.label15.MinimumSize = new System.Drawing.Size(164, 17);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(164, 17);
+            this.label15.Size = new System.Drawing.Size(209, 17);
             this.label15.TabIndex = 19;
             this.label15.Text = "Глубина фаски на шляпке (E):";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -425,7 +425,7 @@ namespace GUI
             // 
             this.textBoxHeadChamferDepth.Location = new System.Drawing.Point(176, 60);
             this.textBoxHeadChamferDepth.Name = "textBoxHeadChamferDepth";
-            this.textBoxHeadChamferDepth.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeadChamferDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadChamferDepth.TabIndex = 1;
             this.textBoxHeadChamferDepth.Text = "0,5";
             this.textBoxHeadChamferDepth.TextChanged += new System.EventHandler(this.textBoxHeadChamferDepth_TextChanged);
@@ -436,7 +436,7 @@ namespace GUI
             this.label16.Location = new System.Drawing.Point(6, 32);
             this.label16.MinimumSize = new System.Drawing.Size(164, 17);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(164, 17);
+            this.label16.Size = new System.Drawing.Size(215, 17);
             this.label16.TabIndex = 18;
             this.label16.Text = "Глубина фаски на стержне (D):";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,7 +445,7 @@ namespace GUI
             // 
             this.textBoxRodChamferDepth.Location = new System.Drawing.Point(176, 32);
             this.textBoxRodChamferDepth.Name = "textBoxRodChamferDepth";
-            this.textBoxRodChamferDepth.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRodChamferDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodChamferDepth.TabIndex = 0;
             this.textBoxRodChamferDepth.Text = "0,5";
             this.textBoxRodChamferDepth.TextChanged += new System.EventHandler(this.textBoxRodChamferDepth_TextChanged);
@@ -458,6 +458,7 @@ namespace GUI
             this.buttonBuild.TabIndex = 3;
             this.buttonBuild.Text = "Построить";
             this.buttonBuild.UseVisualStyleBackColor = true;
+            this.buttonBuild.Click += new System.EventHandler(this.buttonBuild_Click);
             // 
             // buttonClear
             // 

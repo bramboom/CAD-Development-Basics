@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace Core
 {
@@ -65,8 +66,13 @@ namespace Core
             get => _rodLenght;
             set
             {
-                const double minValue = 11.6;
+                double minValue = 11.6; 
                 const double maxValue = 60.0;
+
+                if (!double.IsNaN(HeadLenght))
+                    minValue = HeadLenght * 2.5;
+
+
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -83,7 +89,7 @@ namespace Core
             get => _headLenght;
             set
             {
-                const double minValue = 1.0;
+                const double minValue = 2.0;
                 double maxValue = 8.0;
 
                 if (!double.IsNaN(RodLenght))
@@ -104,11 +110,15 @@ namespace Core
             get => _holeRadius;
             set
             {
-                const double minValue = 0.4;
+                double minValue = 0.4;
                 double maxValue = 4.0;
 
                 if (!double.IsNaN(RodRadius))
-                    maxValue = RodLenght / 2;
+                    maxValue = RodRadius * 0.5;
+
+                if (!double.IsNaN(HoleDistance))
+                    if (!double.IsNaN(RodChamferDepth))
+                        maxValue = HoleDistance - RodChamferDepth;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -128,8 +138,9 @@ namespace Core
                 const double minValue = 0.2;
                 double maxValue = 5.0;
 
-                if (!double.IsNaN(RodLenght))
-                    maxValue = RodLenght / 2;
+                if(!double.IsNaN(HoleRadius))
+                    if (!double.IsNaN(HoleDistance))
+                        maxValue = HoleDistance - HoleRadius;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -147,10 +158,7 @@ namespace Core
             set
             {
                 const double minValue = 0.1; 
-                double maxValue = 2.5;
-
-                if (!double.IsNaN(HoleRadius))
-                    maxValue = HoleRadius / 2;
+                double maxValue = 1.5;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -170,14 +178,11 @@ namespace Core
                 double minValue = 1.6;
                 double maxValue = 10.0;
 
-                if (!double.IsNaN(HoleRadius))
-                {
-                    if (!double.IsNaN(RodChamferDepth))
-                        minValue = HoleRadius / 2 + RodChamferDepth;
+                if (!double.IsNaN(RodChamferDepth))
+                    minValue = RodChamferDepth + HoleRadius;
 
-                    if (!double.IsNaN(RodLenght))
-                        maxValue = RodLenght - HoleRadius * 3 / 2;
-                }
+                if (!double.IsNaN(RodLenght))
+                    maxValue = RodLenght - HoleRadius;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -230,11 +235,14 @@ namespace Core
             get => _rodRadius;
             set
             {
-                const double minValue = 4.0;
+                double minValue = 4.0;
                 double maxValue = 40.0;
 
                 if (!double.IsNaN(HeadRadius))
-                    maxValue = HeadRadius * 3 / 4;
+                    maxValue = HeadRadius * 0.75;
+
+                if (!double.IsNaN(HoleRadius))
+                    minValue = HoleRadius * 2;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -251,8 +259,11 @@ namespace Core
             get => _headRadius;
             set
             {
-                const double minValue = 5.0;
+                double minValue = 5.0; 
                 const double maxValue = 50.0;
+
+                if (!double.IsNaN(RodRadius))
+                    minValue = RodRadius * 4 / 3;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
