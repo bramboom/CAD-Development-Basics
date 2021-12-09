@@ -118,7 +118,7 @@ namespace GUI
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 17);
             this.label12.TabIndex = 17;
-            this.label12.Text = "(от 5 до 50 см)";
+            this.label12.Text = "(от 5 до 25 см)";
             // 
             // label11
             // 
@@ -128,7 +128,7 @@ namespace GUI
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 17);
             this.label11.TabIndex = 16;
-            this.label11.Text = "(от 4 до 40 см)";
+            this.label11.Text = "(от 4 до 20 см)";
             // 
             // label10
             // 
@@ -136,9 +136,9 @@ namespace GUI
             this.label10.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label10.Location = new System.Drawing.Point(282, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 17);
+            this.label10.Size = new System.Drawing.Size(97, 17);
             this.label10.TabIndex = 15;
-            this.label10.Text = "(от 1.6 до 10 см)";
+            this.label10.Text = "(от 4 до 9 см)";
             // 
             // label9
             // 
@@ -146,9 +146,9 @@ namespace GUI
             this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label9.Location = new System.Drawing.Point(282, 94);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 17);
+            this.label9.Size = new System.Drawing.Size(97, 17);
             this.label9.TabIndex = 14;
-            this.label9.Text = "(от 0.4 до 4 см)";
+            this.label9.Text = "(от 1 до 3 см)";
             // 
             // label8
             // 
@@ -156,9 +156,9 @@ namespace GUI
             this.label8.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label8.Location = new System.Drawing.Point(282, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 17);
+            this.label8.Size = new System.Drawing.Size(117, 17);
             this.label8.TabIndex = 13;
-            this.label8.Text = "(от 1 до 8 см)";
+            this.label8.Text = "(от 2.4 до 12 см)";
             // 
             // label7
             // 
@@ -166,9 +166,9 @@ namespace GUI
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label7.Location = new System.Drawing.Point(282, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 17);
+            this.label7.Size = new System.Drawing.Size(113, 17);
             this.label7.TabIndex = 12;
-            this.label7.Text = "(от 11.6 до 60 см)";
+            this.label7.Text = "(от 12 до 60 см)";
             // 
             // label6
             // 
@@ -243,7 +243,7 @@ namespace GUI
             this.textBoxHeadRadius.Name = "textBoxHeadRadius";
             this.textBoxHeadRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadRadius.TabIndex = 5;
-            this.textBoxHeadRadius.Text = "14";
+            this.textBoxHeadRadius.Text = "5";
             this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.textBoxHeadRadius_TextChanged);
             // 
             // textBoxRodRadius
@@ -253,7 +253,7 @@ namespace GUI
             this.textBoxRodRadius.Name = "textBoxRodRadius";
             this.textBoxRodRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodRadius.TabIndex = 4;
-            this.textBoxRodRadius.Text = "10";
+            this.textBoxRodRadius.Text = "4";
             this.textBoxRodRadius.TextChanged += new System.EventHandler(this.textBoxRodRadius_TextChanged);
             // 
             // textBoxHoleDistance
@@ -263,7 +263,7 @@ namespace GUI
             this.textBoxHoleDistance.Name = "textBoxHoleDistance";
             this.textBoxHoleDistance.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleDistance.TabIndex = 3;
-            this.textBoxHoleDistance.Text = "5";
+            this.textBoxHoleDistance.Text = "4";
             this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.textBoxHoleDistance_TextChanged);
             // 
             // textBoxHoleRadius
@@ -273,7 +273,7 @@ namespace GUI
             this.textBoxHoleRadius.Name = "textBoxHoleRadius";
             this.textBoxHoleRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleRadius.TabIndex = 2;
-            this.textBoxHoleRadius.Text = "2";
+            this.textBoxHoleRadius.Text = "1";
             this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать 1/2 параметра I (радиус стержня" +
         ").");
             this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.textBoxHoleRadius_TextChanged);
@@ -377,7 +377,7 @@ namespace GUI
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(121, 17);
             this.label19.TabIndex = 19;
-            this.label19.Text = "(от 0.1 до 2.5 см)";
+            this.label19.Text = "(от 0.1 до 1.2 см)";
             // 
             // label14
             // 
@@ -398,7 +398,7 @@ namespace GUI
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(109, 17);
             this.label20.TabIndex = 18;
-            this.label20.Text = "(от 0.2 до 5 см)";
+            this.label20.Text = "(от 0.2 до 2 см)";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxRodAngleDepth

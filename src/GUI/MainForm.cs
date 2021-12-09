@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Core;
+using Kompas;
 
 namespace GUI
 {
     public partial class LinkPinsPlugin : Form
     {
         private LinkPinParameter _parameter = new LinkPinParameter();
+
+        private Connecter _connecter = new Connecter();
+ 
         public LinkPinsPlugin()
         {
             InitializeComponent();
@@ -98,51 +102,61 @@ namespace GUI
         private void textBoxRodLenght_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodLenght, Parameters.RodLength);
+            InitParameters();
         }
 
         private void textBoxHeadLenght_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHeadLenght, Parameters.HeadLength);
+            InitParameters();
         }
 
         private void textBoxHoleRadius_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHoleRadius, Parameters.HoleRadius);
+            InitParameters();
         }
 
         private void textBoxHoleDistance_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHoleDistance, Parameters.HoleDistance);
+            InitParameters();
         }
 
         private void textBoxRodRadius_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodRadius, Parameters.RodRadius);
+            InitParameters();
         }
 
         private void textBoxHeadRadius_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHeadRadius, Parameters.HeadRadius);
+            InitParameters();
         }
 
         private void textBoxRodChamferDepth_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodChamferDepth, Parameters.RodChamfetDepth);
+            InitParameters();
         }
 
         private void textBoxHeadChamferDepth_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHeadChamferDepth, Parameters.HeadChamferDepth);
+            InitParameters();
         }
 
         private void textBoxRodAngleDepth_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodAngleDepth, Parameters.RodAngleDepth);
+            InitParameters();
         }
 
         private void textBoxHeadAngleDepth_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxHeadAngleDepth, Parameters.HeadAngleDepth);
+            InitParameters();
         }
         
         /// <summary>
@@ -176,6 +190,13 @@ namespace GUI
                 MessageBox.Show(error, "Error");
                 return;
             }
+
+            _connecter.RunKompas();
+
+            Builder builder = new Builder();
+
+            builder.Build(_connecter.KompasObject, _parameter);
+
         }
     }
 }
