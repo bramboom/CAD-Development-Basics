@@ -112,7 +112,7 @@ namespace Core
                 double minValue = 1.0;
                 double maxValue = 3.0;
 
-                if (double.IsNaN(HoleDistance))
+                if (!double.IsNaN(HoleDistance))
                     maxValue = HoleDistance - maxValue;
 
                 if (!Validator(value, minValue, maxValue))
@@ -264,7 +264,7 @@ namespace Core
         /// <param name="minValue">минимальное значение</param>
         /// <param name="maxValue">максимальное значение</param>
         /// <returns>корректное значение или нет</returns>
-        private bool Validator(double value, double minValue, double maxValue)
+        public static bool Validator(double value, double minValue, double maxValue)
         {
             if (value < minValue)
                 return false;
