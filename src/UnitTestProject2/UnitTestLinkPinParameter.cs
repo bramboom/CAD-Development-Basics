@@ -140,7 +140,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 15.0;
+            var expected = 20.0;
 
             detailParameters.HeadRadius = expected;
 
@@ -182,7 +182,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 1.0;
+            var expected = 0.5;
 
             detailParameters.RodChamferDepth = expected;
 
@@ -196,7 +196,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 1.0;
+            var expected = 0.5;
 
             detailParameters.HeadChamferDepth = expected;
 
@@ -210,7 +210,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 4.0;
+            var expected = 15;
 
             detailParameters.RodAngleDepth = expected;
 
@@ -224,7 +224,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 4.0;
+            var expected = 15;
 
             detailParameters.HeadAngleDepth = expected;
 
@@ -266,7 +266,7 @@ namespace UnitTestProject2
         {
             var detailParameters = new LinkPinParameter();
 
-            var expected = 10.0;
+            var expected = 5.0;
 
             detailParameters.HeadRadius = expected;
 
