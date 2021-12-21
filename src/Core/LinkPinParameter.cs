@@ -10,52 +10,52 @@ namespace Core
         /// <summary>
         /// Длина стержня
         /// </summary>
-        private double _rodLenght = double.NaN;
+        private double _rodLenght = 20.0;
         
         /// <summary>
         /// Длина шляпки
         /// </summary>
-        private double _headLenght = double.NaN;
+        private double _headLenght = 4.0;
         
         /// <summary>
         /// Радиус отверстия
         /// </summary>
-        private double _holeRadius = double.NaN;
+        private double _holeRadius = 1.0;
         
         /// <summary>
         /// Глубина фаски на стержне
         /// </summary>
-        private double _rodChamferDepth = double.NaN;
+        private double _rodChamferDepth = 0.5;
         
         /// <summary>
         /// Глубина фаски на шляпки
         /// </summary>
-        private double _headChamferDepth = double.NaN;
+        private double _headChamferDepth = 0.5;
         
         /// <summary>
         /// Расстояние отверстия от кона стержня
         /// </summary>
-        private double _holeDistance = double.NaN;
+        private double _holeDistance = 4.0;
         
         /// <summary>
         /// Угол фаски на стержне
         /// </summary>
-        private double _rodAngleDepth = double.NaN;
+        private double _rodAngleDepth = 15;
         
         /// <summary>
         /// Угол фаски на шляпке
         /// </summary>
-        private double _headAngleDepth = double.NaN;
+        private double _headAngleDepth = 15;
         
         /// <summary>
         /// Радиус стержня
         /// </summary>
-        private double _rodRadius = double.NaN;
+        private double _rodRadius = 4;
         
         /// <summary>
         /// Радиус шляпки
         /// </summary>
-        private double _headRadius = double.NaN;
+        private double _headRadius = 5;
 
         /// <summary>
         /// Возвращает или задает значение длины стержня
