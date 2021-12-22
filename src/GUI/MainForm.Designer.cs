@@ -49,8 +49,8 @@ namespace GUI
             this.textBoxRodRadius = new System.Windows.Forms.TextBox();
             this.textBoxHoleDistance = new System.Windows.Forms.TextBox();
             this.textBoxHoleRadius = new System.Windows.Forms.TextBox();
-            this.textBoxHeadLenght = new System.Windows.Forms.TextBox();
-            this.textBoxRodLenght = new System.Windows.Forms.TextBox();
+            this.textBoxHeadLength = new System.Windows.Forms.TextBox();
+            this.textBoxRodLength = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxDepthParameter = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -101,8 +101,8 @@ namespace GUI
             this.groupBoxMain.Controls.Add(this.textBoxRodRadius);
             this.groupBoxMain.Controls.Add(this.textBoxHoleDistance);
             this.groupBoxMain.Controls.Add(this.textBoxHoleRadius);
-            this.groupBoxMain.Controls.Add(this.textBoxHeadLenght);
-            this.groupBoxMain.Controls.Add(this.textBoxRodLenght);
+            this.groupBoxMain.Controls.Add(this.textBoxHeadLength);
+            this.groupBoxMain.Controls.Add(this.textBoxRodLength);
             this.groupBoxMain.Location = new System.Drawing.Point(12, 12);
             this.groupBoxMain.Name = "groupBoxMain";
             this.groupBoxMain.Size = new System.Drawing.Size(441, 206);
@@ -278,27 +278,27 @@ namespace GUI
         ").");
             this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.textBoxHoleRadius_TextChanged);
             // 
-            // textBoxHeadLenght
+            // textBoxHeadLength
             // 
-            this.textBoxHeadLenght.BackColor = System.Drawing.Color.White;
-            this.textBoxHeadLenght.Location = new System.Drawing.Point(176, 61);
-            this.textBoxHeadLenght.Name = "textBoxHeadLenght";
-            this.textBoxHeadLenght.Size = new System.Drawing.Size(100, 22);
-            this.textBoxHeadLenght.TabIndex = 1;
-            this.textBoxHeadLenght.Text = "4";
-            this.toolTip.SetToolTip(this.textBoxHeadLenght, "Параметр B (длина шляпки) не должен превышать 2/5 параметра A (длина стержня).\r\n\r" +
+            this.textBoxHeadLength.BackColor = System.Drawing.Color.White;
+            this.textBoxHeadLength.Location = new System.Drawing.Point(176, 61);
+            this.textBoxHeadLength.Name = "textBoxHeadLength";
+            this.textBoxHeadLength.Size = new System.Drawing.Size(100, 22);
+            this.textBoxHeadLength.TabIndex = 1;
+            this.textBoxHeadLength.Text = "4";
+            this.toolTip.SetToolTip(this.textBoxHeadLength, "Параметр B (длина шляпки) не должен превышать 2/5 параметра A (длина стержня).\r\n\r" +
         "\n");
-            this.textBoxHeadLenght.TextChanged += new System.EventHandler(this.textBoxHeadLenght_TextChanged);
+            this.textBoxHeadLength.TextChanged += new System.EventHandler(this.textBoxHeadLength_TextChanged);
             // 
-            // textBoxRodLenght
+            // textBoxRodLength
             // 
-            this.textBoxRodLenght.BackColor = System.Drawing.Color.White;
-            this.textBoxRodLenght.Location = new System.Drawing.Point(176, 33);
-            this.textBoxRodLenght.Name = "textBoxRodLenght";
-            this.textBoxRodLenght.Size = new System.Drawing.Size(100, 22);
-            this.textBoxRodLenght.TabIndex = 0;
-            this.textBoxRodLenght.Text = "20";
-            this.textBoxRodLenght.TextChanged += new System.EventHandler(this.textBoxRodLenght_TextChanged);
+            this.textBoxRodLength.BackColor = System.Drawing.Color.White;
+            this.textBoxRodLength.Location = new System.Drawing.Point(176, 33);
+            this.textBoxRodLength.Name = "textBoxRodLength";
+            this.textBoxRodLength.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRodLength.TabIndex = 0;
+            this.textBoxRodLength.Text = "20";
+            this.textBoxRodLength.TextChanged += new System.EventHandler(this.textBoxRodLength_TextChanged);
             // 
             // toolTip
             // 
@@ -510,8 +510,8 @@ namespace GUI
         private System.Windows.Forms.TextBox textBoxRodRadius;
         private System.Windows.Forms.TextBox textBoxHoleDistance;
         private System.Windows.Forms.TextBox textBoxHoleRadius;
-        private System.Windows.Forms.TextBox textBoxHeadLenght;
-        private System.Windows.Forms.TextBox textBoxRodLenght;
+        private System.Windows.Forms.TextBox textBoxHeadLength;
+        private System.Windows.Forms.TextBox textBoxRodLength;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

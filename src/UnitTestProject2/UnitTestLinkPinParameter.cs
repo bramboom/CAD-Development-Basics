@@ -15,365 +15,277 @@ namespace UnitTestProject2
 		/// </summary>
 		private LinkPinParameter Parameters => new LinkPinParameter();
 
-        [TestCase( TestName = "Проверка корректного возврата у свойства RodLength")]
-        public void TestInnerRodLenght_CorrectGetInnerRodLenght()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 20.0;
-
-            var actual = detailParameters.RodLenght;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HeadLenght")]
-        public void TestInnerHeadLenght_CorrectGetInnerHeadLenght()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 4.0;
-
-            var actual = detailParameters.HeadLenght;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HoleRadius")]
-        public void TestInnerHoleRadius_CorrectGetInnerHoleRadius()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 1.0;
-
-            var actual = detailParameters.HoleRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства RodChamferDepth")]
-        public void TestInnerRodChamferDepth_CorrectGetInnerRodChamferDepth()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 0.5;
-
-            var actual = detailParameters.RodChamferDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HeadChamferDepth")]
-        public void TestInnerHeadChamferDepth_CorrectGetInnerHeadChamferDepth()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 0.5;
-
-            var actual = detailParameters.HeadChamferDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства RodAngleDepth")]
-        public void TestInnerRodAngleDepth_CorrectGetInnerRodAngleDepth()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 15;
-
-            var actual = detailParameters.RodAngleDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HeadAngleDepth")]
-        public void TestInnerHeadAngleDepth_CorrectGetInnerHeadAngleDepth()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 15;
-
-            var actual = detailParameters.HeadAngleDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HoleDistance")]
-        public void TestInnerHoleDistance_CorrectGetInnerHoleDistance()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 4.0;
-
-            var actual = detailParameters.HoleDistance;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства RodRadius")]
-        public void TestInnerRodRadius_CorrectGetInnerRodRadius()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 4.0;
-
-            var actual = detailParameters.RodRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
-        [TestCase(TestName = "Проверка корректного возврата у свойства HeadRadius")]
-        public void TestInnerHeadRadius_CorrectGetInnerHeadRadius()
-        {
-            var detailParameters = new LinkPinParameter();
-
-            var expected = 5.0;
-
-            var actual = detailParameters.HeadRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
-        }
-
         [TestCase(TestName = "Проверка корректного присвоения свойству RodLength")]
-        public void TestInnerRodLenght_CorrectSetInnerRodLenght()
+        public void TestRodLength_CorrectSetRodLength()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 20.0;
 
-            detailParameters.HeadRadius = expected;
-
-            var actual = detailParameters.HeadRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.RodLength = expected,
+                "значение выходит за пределы диапазона");
         }
 
-        [TestCase(TestName = "Проверка корректного присвоения свойству HeadLenght")]
-        public void TestInnerHeadLenght_CorrectSetInnerHeadLenght()
+        [TestCase(TestName = "Проверка корректного присвоения свойству HeadLength")]
+        public void TestHeadLength_CorrectSetHeadLength()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 4.0;
 
-            detailParameters.HeadLenght = expected;
-
-            var actual = detailParameters.HeadLenght;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HeadLength = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству HoleRadius")]
-        public void TestInnerHoleRadius_CorrectSetInnerHoleRadius()
+        public void TestHoleRadius_CorrectSetHoleRadius()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 1.0;
 
-            detailParameters.HoleRadius = expected;
-
-            var actual = detailParameters.HoleRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HoleRadius = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству RodChamferDepth")]
-        public void TestInnerRodChamferDepth_CorrectSetInnerRodChamferDepth()
+        public void TestRodChamferDepth_CorrectSetRodChamferDepth()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 0.5;
 
-            detailParameters.RodChamferDepth = expected;
-
-            var actual = detailParameters.RodChamferDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.RodChamferDepth = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству HeadChamferDepth")]
-        public void TestInnerHeadChamferDepth_CorrectSetInnerHeadChamferDepth()
+        public void TestHeadChamferDepth_CorrectSetHeadChamferDepth()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 0.5;
 
-            detailParameters.HeadChamferDepth = expected;
-
-            var actual = detailParameters.HeadChamferDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HeadChamferDepth = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству RodAngleDepth")]
-        public void TestInnerRodAngleDepth_CorrectsetInnerRodAngleDepth()
+        public void TestRodAngleDepth_CorrectsetRodAngleDepth()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 15;
 
-            detailParameters.RodAngleDepth = expected;
-
-            var actual = detailParameters.RodAngleDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.RodAngleDepth = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству HeadAngleDepth")]
-        public void TestInnerHeadAngleDepth_CorrectSetInnerHeadAngleDepth()
+        public void TestHeadAngleDepth_CorrectSetHeadAngleDepth()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 15;
 
-            detailParameters.HeadAngleDepth = expected;
-
-            var actual = detailParameters.HeadAngleDepth;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HeadAngleDepth = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству HoleDistance")]
-        public void TestInnerHoleDistance_CorrectSetInnerHoleDistance()
+        public void TestHoleDistance_CorrectSetHoleDistance()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 4.0;
 
-            detailParameters.HoleDistance = expected;
-
-            var actual = detailParameters.HoleDistance;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HoleDistance = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству RodRadius")]
-        public void TestInnerRodRadius_CorrectSetInnerRodRadius()
+        public void TestRodRadius_CorrectSetRodRadius()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 4.0;
 
-            detailParameters.RodRadius = expected;
-
-            var actual = detailParameters.RodRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.RodRadius = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(TestName = "Проверка корректного присвоения свойству HeadRadius")]
-        public void TestInnerHeadRadius_CorrectSetInnerHeadRadius()
+        public void TestHeadRadius_CorrectSetHeadRadius()
         {
-            var detailParameters = new LinkPinParameter();
-
             var expected = 5.0;
 
-            detailParameters.HeadRadius = expected;
-
-            var actual = detailParameters.HeadRadius;
-
-            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+            Assert.DoesNotThrow(() => Parameters.HeadRadius = expected,
+                "значение выходит за пределы диапазона");
         }
 
         [TestCase(0, TestName = "Проверка некорректного ввода у свойства RodLength при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства RodLength при значении больше максимального")]
-        public void TestInnerRodLenght_IncorrectSetInnerRodLenght(double value)
+        public void TestRodLength_IncorrectSetRodLength(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.RodLenght = value,
+            Assert.Throws<ArgumentException>(() => Parameters.RodLength = value,
                 "Не входящее в диапазон значение присвоилось RodLength");
         }
 
-        [TestCase(0, TestName = "Проверка некорректного ввода у свойства HeadLenght при значении меньше минимального")]
-        [TestCase(100, TestName = "Проверка некорректного ввода у свойства HeadLenght при значении больше максимального")]
-        public void TestInnerHeadLenght_IncorrectSetInnerHeadLenght(double value)
+        [TestCase(0, TestName = "Проверка некорректного ввода у свойства HeadLength при значении меньше минимального")]
+        [TestCase(100, TestName = "Проверка некорректного ввода у свойства HeadLength при значении больше максимального")]
+        public void TestHeadLength_IncorrectSetHeadLength(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HeadLenght = value,
-                "Не входящее в диапазон значение присвоилось HeadLenght");
+            Assert.Throws<ArgumentException>(() => Parameters.HeadLength = value,
+                "Не входящее в диапазон значение присвоилось HeadLength");
         }
 
         [TestCase(0, TestName = "Проверка некорректного ввода у свойства HoleRadius при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства HoleRadius при значении больше максимального")]
-        public void TestInnerHoleRadius_IncorrectSetInnerHoleRadius(double value)
+        public void TestHoleRadius_IncorrectSetHoleRadius(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HoleRadius = value,
+            Assert.Throws<ArgumentException>(() => Parameters.HoleRadius = value,
                 "Не входящее в диапазон значение присвоилось HoleRadius");
         }
 
         [TestCase(0, TestName = "Проверка некорректного ввода у свойства RodChamferDepth при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства RodChamferDepth при значении больше максимального")]
-        public void TestInnerRodChamferDepth_IncorrectSetInnerRodChamferDepth(double value)
+        public void TestRodChamferDepth_IncorrectSetRodChamferDepth(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.RodChamferDepth = value,
+            Assert.Throws<ArgumentException>(() => Parameters.RodChamferDepth = value,
                 "Не входящее в диапазон значение присвоилось RodChamferDepth");
         }
 
         [TestCase(0, TestName = "Проверка некорректного ввода у свойства HeadChamferDepth при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства HeadChamferDepth при значении больше максимального")]
-        public void TestInnerHeadChamferDepth_IncorrectSetInnerHeadChamferDepth(double value)
+        public void TestHeadChamferDepth_IncorrectSetHeadChamferDepth(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HeadChamferDepth = value,
+            Assert.Throws<ArgumentException>(() => Parameters.HeadChamferDepth = value,
                 "Не входящее в диапазон значение присвоилось HeadChamferDepth");
         }
 
         [TestCase(-1, TestName = "Проверка некорректного ввода у свойства RodAngleDepth при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства RodAngleDepth при значении больше максимального")]
-        public void TestInnerRodAngleDepth_IncorrectSetInnerRodAngleDepth(double value)
+        public void TestRodAngleDepth_IncorrectSetRodAngleDepth(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.RodAngleDepth = value,
+            Assert.Throws<ArgumentException>(() => Parameters.RodAngleDepth = value,
                 "Не входящее в диапазон значение присвоилось RodAngleDepth");
         }
 
         [TestCase(-1, TestName = "Проверка некорректного ввода у свойства HeadAngleDepth при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства HeadAngleDepth при значении больше максимального")]
-        public void TestInnerHeadAngleDepth_IncorrectSetInnerHeadAngleDepth(double value)
+        public void TestHeadAngleDepth_IncorrectSetHeadAngleDepth(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HeadAngleDepth = value,
+            Assert.Throws<ArgumentException>(() => Parameters.HeadAngleDepth = value,
                 "Не входящее в диапазон значение присвоилось HeadAngleDepth");
         }
 
         [TestCase(1, TestName = "Проверка некорректного ввода у свойства HoleDistance при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства HoleDistance при значении больше максимального")]
-        public void TestInnerHoleDistance_IncorrectSetInnerHoleDistance(double value)
+        public void TestHoleDistance_IncorrectSetHoleDistance(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HoleDistance = value,
+            Assert.Throws<ArgumentException>(() => Parameters.HoleDistance = value,
                 "Не входящее в диапазон значение присвоилось HoleDistance");
         }
 
         [TestCase(1, TestName = "Проверка некорректного ввода у свойства RodRadius при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства RodRadius при значении больше максимального")]
-        public void TestInnerRodRadius_IncorrectSetInnerRodRadius(double value)
+        public void TestRodRadius_IncorrectSetRodRadius(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.RodRadius = value,
+            Assert.Throws<ArgumentException>(() => Parameters.RodRadius = value,
                 "Не входящее в диапазон значение присвоилось RodRadius");
         }
 
         [TestCase(1, TestName = "Проверка некорректного ввода у свойства HeadRadius при значении меньше минимального")]
         [TestCase(100, TestName = "Проверка некорректного ввода у свойства HeadRadius при значении больше максимального")]
-        public void TestInnerHeadRadius_IncorrectSetInnerHeadRadius(double value)
+        public void TestHeadRadius_IncorrectSetHeadRadius(double value)
         {
-            var detailParameters = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => detailParameters.HeadRadius = value,
+            Assert.Throws<ArgumentException>(() => Parameters.HeadRadius = value,
                 "Не входящее в диапазон значение присвоилось HeadRadius");
         }
+
+        [TestCase( TestName = "Проверка корректного возврата у свойства RodLength")]
+        public void TestRodLength_CorrectGetRodLength()
+        {
+            var expected = 20.0;
+
+            var actual = Parameters.RodLength;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HeadLength")]
+        public void TestHeadLength_CorrectGetHeadLength()
+        {
+            var expected = 4.0;
+
+            var actual = Parameters.HeadLength;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HoleRadius")]
+        public void TestHoleRadius_CorrectGetHoleRadius()
+        {
+            var expected = 1.0;
+
+            var actual = Parameters.HoleRadius;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства RodChamferDepth")]
+        public void TestRodChamferDepth_CorrectGetRodChamferDepth()
+        {
+            var expected = 0.5;
+
+            var actual = Parameters.RodChamferDepth;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HeadChamferDepth")]
+        public void TestHeadChamferDepth_CorrectGetHeadChamferDepth()
+        {
+            var expected = 0.5;
+
+            var actual = Parameters.HeadChamferDepth;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства RodAngleDepth")]
+        public void TestRodAngleDepth_CorrectGetRodAngleDepth()
+        {
+            var expected = 15;
+
+            var actual = Parameters.RodAngleDepth;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HeadAngleDepth")]
+        public void TestHeadAngleDepth_CorrectGetHeadAngleDepth()
+        {
+            var expected = 15;
+
+            var actual = Parameters.HeadAngleDepth;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HoleDistance")]
+        public void TestHoleDistance_CorrectGetHoleDistance()
+        {
+            var expected = 4.0;
+
+            var actual = Parameters.HoleDistance;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства RodRadius")]
+        public void TestRodRadius_CorrectGetRodRadius()
+        {
+            var expected = 4.0;
+
+            var actual = Parameters.RodRadius;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        [TestCase(TestName = "Проверка корректного возврата у свойства HeadRadius")]
+        public void TestHeadRadius_CorrectGetHeadRadius()
+        {
+            var expected = 5.0;
+
+            var actual = Parameters.HeadRadius;
+
+            Assert.AreEqual(expected, actual, "Возвращенное значение не равно ожидаемому");
+        }
+
+        
 
         [TestCase(1.5, true, TestName = "Validator проверка корректного значения")]
         [TestCase(2.1, false, TestName = "Validator проверка значения, больше максимального")]
@@ -398,11 +310,9 @@ namespace UnitTestProject2
         [TestCase(Core.Parameters.HeadChamferDepth, 0.5, TestName = "SetValue значение входящее в диапазон HeadChamferDepth")]
         [TestCase(Core.Parameters.RodAngleDepth, 15, TestName = "SetValue значение входящее в диапазон RodAngleDepth")]
         [TestCase(Core.Parameters.HeadAngleDepth, 15, TestName = "SetValue значение входящее в диапазон HeadAngleDepth")]
-        public void TestValue_CorrectSetValue(Core.Parameters parameter, double value)
+        public void TestValue_CorrectSetValue(Parameters parameter, double value)
         {
-            var linkPinParameter = new LinkPinParameter();
-
-            Assert.DoesNotThrow(() => linkPinParameter.SetValue(parameter, value), "Входящее в диапазон значение присвоилось " + parameter.ToString());
+            Assert.DoesNotThrow(() => Parameters.SetValue(parameter, value), "Входящее в диапазон значение присвоилось " + parameter.ToString());
         }
 
         [TestCase(Core.Parameters.RodLength, 0, TestName = "SetValue значение меньше минимального для RodLength")]
@@ -425,20 +335,17 @@ namespace UnitTestProject2
         [TestCase(Core.Parameters.RodChamfetDepth, 100, TestName = "SetValue значение больше максимального для RodChamfetDepth")]
         [TestCase(Core.Parameters.HeadChamferDepth, 0, TestName = "SetValue значение меньше минимального для HeadChamferDepth")]
         [TestCase(Core.Parameters.HeadChamferDepth, 100, TestName = "SetValue значение больше максимального для HeadChamferDepth")]
-        public void TestValue_IncorrectSetValue(Core.Parameters parameter, double value)
+        public void TestValue_IncorrectSetValue(Parameters parameter, double value)
         {
-            var linkPinParameter = new LinkPinParameter();
-
-            Assert.Throws<ArgumentException>(() => linkPinParameter.SetValue(parameter, value), "Не входящее в диапазон значение присвоилось " + parameter.ToString());
+            Assert.Throws<ArgumentException>(() => Parameters.SetValue(parameter, value), "Не входящее в диапазон значение присвоилось " + parameter.ToString());
         }
 
         [TestCase(TestName = "SetValue передача параметра не входящего в группу Parameters")]
         public void TestValue_DefaultSetValue()
         {
-            var linkPinParameter = new LinkPinParameter();
             Parameters parameter = Core.Parameters.HeadRadius + 1;
 
-            Assert.DoesNotThrow(() => linkPinParameter.SetValue(parameter, -1), "Значение пыталось присвоиться полю");
+            Assert.DoesNotThrow(() => Parameters.SetValue(parameter, -1), "Значение пыталось присвоиться полю");
         }
 	}
 }

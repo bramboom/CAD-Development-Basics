@@ -10,12 +10,12 @@ namespace Core
         /// <summary>
         /// Длина стержня
         /// </summary>
-        private double _rodLenght = 20.0;
+        private double _rodLength = 20.0;
         
         /// <summary>
         /// Длина шляпки
         /// </summary>
-        private double _headLenght = 4.0;
+        private double _headLength = 4.0;
         
         /// <summary>
         /// Радиус отверстия
@@ -60,44 +60,44 @@ namespace Core
         /// <summary>
         /// Возвращает или задает значение длины стержня
         /// </summary>
-        public double RodLenght
+        public double RodLength
         {
-            get => _rodLenght;
+            get => _rodLength;
             set
             {
                 double minValue = 12.0; 
                 const double maxValue = 60.0;
 
-                if (!double.IsNaN(HeadLenght))
-                    minValue = HeadLenght * 5;
+                if (!double.IsNaN(HeadLength))
+                    minValue = HeadLength * 5;
 
 
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
-                _rodLenght = value;
+                _rodLength = value;
             }
         }
 
         /// <summary>
         /// Возвращает или задает значение длины шляпки
         /// </summary>
-        public double HeadLenght
+        public double HeadLength
         {
-            get => _headLenght;
+            get => _headLength;
             set
             {
                 const double minValue = 2.4;
                 double maxValue = 12.0;
 
-                if (!double.IsNaN(RodLenght))
-                    maxValue = RodLenght * 0.2;
+                if (!double.IsNaN(RodLength))
+                    maxValue = RodLength * 0.2;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
 
-                _headLenght = value;
+                _headLength = value;
             }
         }
 
@@ -131,7 +131,7 @@ namespace Core
             set
             {
                 const double minValue = 0.2;
-                double maxValue = 2.0;
+                const double maxValue = 2.0;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -149,7 +149,7 @@ namespace Core
             set
             {
                 const double minValue = 0.1; 
-                double maxValue = 1.2;
+                const double maxValue = 1.2;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -167,10 +167,9 @@ namespace Core
             set
             {
                 double minValue = 3.0;
-                double maxValue = 9.0;
+                const double maxValue = 9.0;
 
-                if (!double.IsNaN(HoleRadius))
-                    minValue = minValue + HoleRadius;
+                minValue = minValue + HoleRadius;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
@@ -281,12 +280,12 @@ namespace Core
             {
                 case Parameters.RodLength:
                 {
-                    RodLenght = value;
+                    RodLength = value;
                     break;
                 }
                 case Parameters.HeadLength:
                 {
-                    HeadLenght = value;
+                    HeadLength = value;
                     break;
                 }
                 case Parameters.HoleRadius:

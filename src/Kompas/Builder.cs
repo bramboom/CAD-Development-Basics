@@ -99,7 +99,7 @@ namespace Kompas
             document2DRod.ksCircle(0, 0, _detailParameters.RodRadius, 1);
             sketchDefinition.EndEdit();
 
-            BossExtrusion(part, sketch, _detailParameters.RodLenght);
+            BossExtrusion(part, sketch, _detailParameters.RodLength);
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Kompas
             sketchDefinition.SetPlane(plane);
             sketch.Create();
             ksDocument2D document2DRod = sketchDefinition.BeginEdit();
-            document2DRod.ksCircle(0, _detailParameters.HoleDistance - _detailParameters.RodLenght, _detailParameters.HoleRadius, 1);
+            document2DRod.ksCircle(0, _detailParameters.HoleDistance - _detailParameters.RodLength, _detailParameters.HoleRadius, 1);
             sketchDefinition.EndEdit();
             CutExtrusion(part, sketch, _detailParameters.RodRadius);
             CutExtrusion(part, sketch, -_detailParameters.RodRadius);
@@ -136,7 +136,7 @@ namespace Kompas
             ksDocument2D document2D = sketchDefinition.BeginEdit();
             document2D.ksCircle(0, 0, _detailParameters.HeadRadius, 1);
             sketchDefinition.EndEdit();
-            BossExtrusion(part, sketch, -_detailParameters.HeadLenght);
+            BossExtrusion(part, sketch, -_detailParameters.HeadLength);
         }
     }
 }

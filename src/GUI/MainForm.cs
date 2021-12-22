@@ -72,8 +72,8 @@ namespace GUI
         /// </summary>
         private void InitParameters()
         {
-            GetValueFromTextBox(textBoxRodLenght, Parameters.RodLength);
-            GetValueFromTextBox(textBoxHeadLenght, Parameters.HeadLength);
+            GetValueFromTextBox(textBoxRodLength, Parameters.RodLength);
+            GetValueFromTextBox(textBoxHeadLength, Parameters.HeadLength);
             GetValueFromTextBox(textBoxHoleRadius, Parameters.HoleRadius);
             GetValueFromTextBox(textBoxHoleDistance, Parameters.HoleDistance);
             GetValueFromTextBox(textBoxRodRadius, Parameters.RodRadius);
@@ -86,8 +86,8 @@ namespace GUI
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            ClearTextBox(textBoxRodLenght);
-            ClearTextBox(textBoxHeadLenght);
+            ClearTextBox(textBoxRodLength);
+            ClearTextBox(textBoxHeadLength);
             ClearTextBox(textBoxHoleRadius);
             ClearTextBox(textBoxRodChamferDepth);
             ClearTextBox(textBoxHeadChamferDepth);
@@ -99,15 +99,15 @@ namespace GUI
             _parameter = new LinkPinParameter();
         }
 
-        private void textBoxRodLenght_TextChanged(object sender, EventArgs e)
+        private void textBoxRodLength_TextChanged(object sender, EventArgs e)
         {
-            GetValueFromTextBox(textBoxRodLenght, Parameters.RodLength);
+            GetValueFromTextBox(textBoxRodLength, Parameters.RodLength);
             InitParameters();
         }
 
-        private void textBoxHeadLenght_TextChanged(object sender, EventArgs e)
+        private void textBoxHeadLength_TextChanged(object sender, EventArgs e)
         {
-            GetValueFromTextBox(textBoxHeadLenght, Parameters.HeadLength);
+            GetValueFromTextBox(textBoxHeadLength, Parameters.HeadLength);
             InitParameters();
         }
 
@@ -174,8 +174,8 @@ namespace GUI
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             string error = "Параметры введены неверно:";
-            AddError(ref error, textBoxRodLenght, "\nДлина стержня");
-            AddError(ref error, textBoxHeadLenght, "\nДлина шляпки");
+            AddError(ref error, textBoxRodLength, "\nДлина стержня");
+            AddError(ref error, textBoxHeadLength, "\nДлина шляпки");
             AddError(ref error, textBoxHoleRadius, "\nРадиус отверстия");
             AddError(ref error, textBoxHoleDistance, "\nРастояние отверстия");
             AddError(ref error, textBoxRodRadius, "\nРадиус стержня");
