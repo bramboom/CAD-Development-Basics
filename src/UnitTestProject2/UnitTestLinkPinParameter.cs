@@ -415,7 +415,7 @@ namespace UnitTestProject2
             var expected = 20.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.RodLength = expected,
+                () => parameters.RodLength = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -429,7 +429,7 @@ namespace UnitTestProject2
             var expected = 4.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.HeadLength = expected,
+                () => parameters.HeadLength = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -443,7 +443,7 @@ namespace UnitTestProject2
             var expected = 1.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.HoleRadius = expected,
+                () => parameters.HoleRadius = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -457,7 +457,7 @@ namespace UnitTestProject2
             var expected = 4.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.HoleDistance = expected,
+                () => parameters.HoleDistance = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -471,7 +471,7 @@ namespace UnitTestProject2
             var expected = 4.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.RodRadius = expected,
+                () => parameters.RodRadius = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -485,7 +485,7 @@ namespace UnitTestProject2
             var expected = 5.0;
 
             Assert.DoesNotThrow(
-                () => Parameters.HeadRadius = expected,
+                () => parameters.HeadRadius = expected,
                 "значение выходит за пределы диапазона");
         }
 
@@ -501,7 +501,7 @@ namespace UnitTestProject2
             parameters.HeadLength = 4.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.RodLength = value,
+                () => parameters.RodLength = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось RodLength");
         }
@@ -518,7 +518,7 @@ namespace UnitTestProject2
             parameters.RodLength = 20.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.HeadLength = value,
+                () => parameters.HeadLength = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось HeadLength");
         }
@@ -535,7 +535,7 @@ namespace UnitTestProject2
             parameters.HoleDistance = 4.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.HoleRadius = value,
+                () => parameters.HoleRadius = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось HoleRadius");
         }
@@ -552,7 +552,7 @@ namespace UnitTestProject2
             parameters.HoleRadius = 1.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.HoleDistance = value,
+                () => parameters.HoleDistance = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось HoleDistance");
         }
@@ -569,7 +569,7 @@ namespace UnitTestProject2
             parameters.HeadRadius = 5.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.RodRadius = value,
+                () => parameters.RodRadius = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось RodRadius");
         }
@@ -586,7 +586,7 @@ namespace UnitTestProject2
             parameters.RodRadius = 4.0;
 
             Assert.Throws<ArgumentException>(
-                () => Parameters.HeadRadius = value,
+                () => parameters.HeadRadius = value,
                 "Не входящее в диапазон значение "
                 + "присвоилось HeadRadius");
         }
