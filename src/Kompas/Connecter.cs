@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using Kompas6API5;
-using Kompas6Constants3D;
 
 namespace Kompas
 {
     public class Connecter
     {
+        /// <summary>
+        /// Свойство объекта KompasObject
+        /// </summary>
 		public KompasObject KompasObject { get; private set; }
 
         /// <summary>
