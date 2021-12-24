@@ -10,52 +10,52 @@ namespace Core
         /// <summary>
         /// Длина стержня
         /// </summary>
-        private double _rodLength = 20.0;
+        private double _rodLength = double.NaN;
         
         /// <summary>
         /// Длина шляпки
         /// </summary>
-        private double _headLength = 4.0;
+        private double _headLength = double.NaN;
         
         /// <summary>
         /// Радиус отверстия
         /// </summary>
-        private double _holeRadius = 1.0;
+        private double _holeRadius = double.NaN;
         
         /// <summary>
         /// Глубина фаски на стержне
         /// </summary>
-        private double _rodChamferDepth = 0.5;
+        private double _rodChamferDepth = double.NaN;
         
         /// <summary>
         /// Глубина фаски на шляпки
         /// </summary>
-        private double _headChamferDepth = 0.5;
+        private double _headChamferDepth = double.NaN;
         
         /// <summary>
         /// Расстояние отверстия от кона стержня
         /// </summary>
-        private double _holeDistance = 4.0;
+        private double _holeDistance = double.NaN;
         
         /// <summary>
         /// Угол фаски на стержне
         /// </summary>
-        private double _rodAngleDepth = 15;
+        private double _rodAngleDepth = double.NaN;
         
         /// <summary>
         /// Угол фаски на шляпке
         /// </summary>
-        private double _headAngleDepth = 15;
+        private double _headAngleDepth = double.NaN;
         
         /// <summary>
         /// Радиус стержня
         /// </summary>
-        private double _rodRadius = 4;
+        private double _rodRadius = double.NaN;
         
         /// <summary>
         /// Радиус шляпки
         /// </summary>
-        private double _headRadius = 5;
+        private double _headRadius = double.NaN;
 
         /// <summary>
         /// Возвращает или задает значение длины стержня
@@ -169,7 +169,8 @@ namespace Core
                 double minValue = 3.0;
                 const double maxValue = 9.0;
 
-                minValue = minValue + HoleRadius;
+                if (!double.IsNaN(HoleRadius))
+                    minValue = minValue + HoleRadius;
 
                 if (!Validator(value, minValue, maxValue))
                     throw new ArgumentException("incorrect value");
