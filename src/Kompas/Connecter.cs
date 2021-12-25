@@ -36,7 +36,7 @@ namespace Kompas
                     catch (COMException)
                     {
                         var kompasType = Type.GetTypeFromProgID("KOMPAS.Application.5");
-                        KompasObject = (KompasObject) Activator.CreateInstance(kompasType);
+                        KompasObject = (KompasObject)Activator.CreateInstance(kompasType);
                     }
                 }
 

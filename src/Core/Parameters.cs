@@ -1,6 +1,4 @@
-﻿
-
-namespace Core
+﻿namespace Core
 {
     /// <summary>
     /// Список параметров детали

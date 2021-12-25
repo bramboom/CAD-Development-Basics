@@ -1,7 +1,6 @@
-﻿
-namespace GUI
+﻿namespace GUI
 {
-    partial class LinkPinsPlugin
+    partial class LinkPinPlugin
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,7 +29,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LinkPinsPlugin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LinkPinPlugin));
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBoxMain = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -244,6 +243,8 @@ namespace GUI
             this.textBoxHeadRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadRadius.TabIndex = 5;
             this.textBoxHeadRadius.Text = "5";
+            this.toolTip.SetToolTip(this.textBoxHeadRadius, "Параметр J (радиус шляпки) не должен быть меньше 1,25 параметра I (радиус стержня" +
+        ").");
             this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.textBoxHeadRadius_TextChanged);
             // 
             // textBoxRodRadius
@@ -254,6 +255,7 @@ namespace GUI
             this.textBoxRodRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodRadius.TabIndex = 4;
             this.textBoxRodRadius.Text = "4";
+            this.toolTip.SetToolTip(this.textBoxRodRadius, "Параметр I (радиус стержня) не должен превышать 0,8 параметра J (радиус шляпки).");
             this.textBoxRodRadius.TextChanged += new System.EventHandler(this.textBoxRodRadius_TextChanged);
             // 
             // textBoxHoleDistance
@@ -264,6 +266,8 @@ namespace GUI
             this.textBoxHoleDistance.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleDistance.TabIndex = 3;
             this.textBoxHoleDistance.Text = "4";
+            this.toolTip.SetToolTip(this.textBoxHoleDistance, "Параметр F (расстояние до отверстия) не должен быть меньше параметра C (радиус от" +
+        "верстия) + минимальное значение.");
             this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.textBoxHoleDistance_TextChanged);
             // 
             // textBoxHoleRadius
@@ -274,8 +278,8 @@ namespace GUI
             this.textBoxHoleRadius.Size = new System.Drawing.Size(100, 22);
             this.textBoxHoleRadius.TabIndex = 2;
             this.textBoxHoleRadius.Text = "1";
-            this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать 1/2 параметра I (радиус стержня" +
-        ").");
+            this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать параметр F (расстояние до отвер" +
+        "стия) - максимальное значение.");
             this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.textBoxHoleRadius_TextChanged);
             // 
             // textBoxHeadLength
@@ -286,7 +290,7 @@ namespace GUI
             this.textBoxHeadLength.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadLength.TabIndex = 1;
             this.textBoxHeadLength.Text = "4";
-            this.toolTip.SetToolTip(this.textBoxHeadLength, "Параметр B (длина шляпки) не должен превышать 2/5 параметра A (длина стержня).\r\n\r" +
+            this.toolTip.SetToolTip(this.textBoxHeadLength, "Параметр B (длина шляпки) не должен превышать 0.2 параметра A (длина стержня).\r\n\r" +
         "\n");
             this.textBoxHeadLength.TextChanged += new System.EventHandler(this.textBoxHeadLength_TextChanged);
             // 
@@ -298,6 +302,7 @@ namespace GUI
             this.textBoxRodLength.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodLength.TabIndex = 0;
             this.textBoxRodLength.Text = "20";
+            this.toolTip.SetToolTip(this.textBoxRodLength, " Параметр A (длина стержня) не должен быть меньше 5  параметров B (длины шляпки)");
             this.textBoxRodLength.TextChanged += new System.EventHandler(this.textBoxRodLength_TextChanged);
             // 
             // toolTip
@@ -470,7 +475,7 @@ namespace GUI
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // LinkPinsPlugin
+            // LinkPinPlugin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(929, 461);
@@ -481,8 +486,10 @@ namespace GUI
             this.Controls.Add(this.pictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(947, 508);
             this.MinimizeBox = false;
-            this.Name = "LinkPinsPlugin";
+            this.MinimumSize = new System.Drawing.Size(947, 508);
+            this.Name = "LinkPinPlugin";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

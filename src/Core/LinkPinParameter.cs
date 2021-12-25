@@ -187,7 +187,7 @@ namespace Core
             get => _rodAngleDepth;
             set
             {
-                const double minValue = 0.0;
+                const double minValue = 1.0;
                 const double maxValue = 30.0;
 
                 if (!Validator(value, minValue, maxValue))
@@ -205,7 +205,7 @@ namespace Core
             get => _headAngleDepth;
             set
             {
-                const double minValue = 0.0;
+                const double minValue = 1.0;
                 const double maxValue = 45.0;
 
                 if (!Validator(value, minValue, maxValue))

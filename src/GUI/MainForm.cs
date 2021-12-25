@@ -10,7 +10,7 @@ namespace GUI
     /// <summary>
     /// Главная форма плагина
     /// </summary>
-    public partial class LinkPinsPlugin : Form
+    public partial class LinkPinPlugin : Form
     {
         /// <summary>
         /// Поле, хранящее параметры детали
@@ -25,7 +25,7 @@ namespace GUI
         /// <summary>
         /// Конструктор главной формы
         /// </summary>
-        public LinkPinsPlugin()
+        public LinkPinPlugin()
         {
             InitializeComponent();
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
