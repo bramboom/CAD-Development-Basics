@@ -2,7 +2,7 @@
 using Core;
 using NUnit.Framework;
 
-namespace UnitTestProject2
+namespace UnitTest
 {
 	/// <summary>
 	/// Класс теста 
