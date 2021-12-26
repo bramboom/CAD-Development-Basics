@@ -4,6 +4,9 @@ using Kompas6API5;
 
 namespace Kompas
 {
+    /// <summary>
+    /// Класс, запускающий Компас-3D
+    /// </summary>
     public class Connecter
     {
         /// <summary>

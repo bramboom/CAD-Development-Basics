@@ -4,6 +4,9 @@ using Core;
 
 namespace Kompas
 {
+    /// <summary>
+    /// Сборщик модели
+    /// </summary>
     public class Builder
     {
         /// <summary>
