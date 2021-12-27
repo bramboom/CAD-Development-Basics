@@ -15,6 +15,7 @@ namespace UnitTest
 		/// </summary>
 		private LinkPinParameter Parameters => new LinkPinParameter();
 
+        //TODO: Убрать дубли
         [TestCase(TestName = "Проверка корректного "
             + "присвоения свойству RodLength")]
         public void TestRodLength_CorrectSetRodLength()
@@ -714,9 +715,8 @@ namespace UnitTest
         public void TestValue_IncorrectSetValue(Parameters parameter, double value)
         {
             Assert.Throws<ArgumentException>(
-                () => Parameters.SetValue(parameter, value), 
-                "Не входящее в диапазон значение присвоилось " 
-                + parameter.ToString());
+                    () => Parameters.SetValue(parameter, value), 
+                $"Не входящее в диапазон значение присвоилось {parameter}");
         }
 
         [TestCase(TestName = "SetValue передача параметра "

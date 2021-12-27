@@ -68,6 +68,7 @@ namespace Core
                 double minValue = 12.0; 
                 const double maxValue = 60.0;
 
+                //TODO: скобочки
                 if (!double.IsNaN(HeadLength))
                     minValue = HeadLength * 5;
 
@@ -275,6 +276,7 @@ namespace Core
             return true;
         }
 
+        //TODO: XML?
         public void SetValue(Parameters parameter, double value)
         {
             switch (parameter)

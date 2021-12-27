@@ -57,6 +57,7 @@ namespace GUI
             double value ;
             if (!double.TryParse(textBox.Text, out value))
             {
+                //TODO: to const
                 textBox.BackColor = Color.DarkSalmon;
                 return;
             }
@@ -67,6 +68,7 @@ namespace GUI
             }
             catch (ArgumentException)
             {
+                //TODO: to const
                 textBox.BackColor = Color.DarkSalmon;
             }
         }
@@ -76,6 +78,7 @@ namespace GUI
         /// </summary>
         private void InitParameters()
         {
+            //TODO: Убрать дублирование
             GetValueFromTextBox(textBoxRodLength, 
                 Parameters.RodLength);
             GetValueFromTextBox(textBoxHeadLength, 
@@ -106,6 +109,7 @@ namespace GUI
         /// <param name="errorName">наименование параметра</param>
         private void AddError(ref string error, TextBox textBox, string errorName)
         {
+            //TODO: to const
             if (textBox.BackColor == Color.DarkSalmon ||
                 textBox.Text == "")
                 error += errorName;
@@ -113,6 +117,7 @@ namespace GUI
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            //TODO: Убрать дублирование
             ClearTextBox(textBoxRodLength);
             ClearTextBox(textBoxHeadLength);
             ClearTextBox(textBoxHoleRadius);
@@ -126,6 +131,8 @@ namespace GUI
             _parameter = new LinkPinParameter();
         }
 
+
+        //TODO: XML + устранить дублирование
         private void textBoxRodLength_TextChanged(object sender, EventArgs e)
         {
             GetValueFromTextBox(textBoxRodLength, 
@@ -199,6 +206,7 @@ namespace GUI
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             string error = "Параметры введены неверно:";
+            //TODO: Убрать дублирование
             AddError(ref error, textBoxRodLength, 
                 "\nДлина стержня");
             AddError(ref error, textBoxHeadLength, 
