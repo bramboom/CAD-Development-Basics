@@ -68,14 +68,16 @@ namespace Core
                 double minValue = 12.0; 
                 const double maxValue = 60.0;
 
-                //TODO: скобочки
+                //TODO: скобочки +для LinkPinParameter
                 if (!double.IsNaN(HeadLength))
+                {
                     minValue = HeadLength * 5;
-
-
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _rodLength = value;
             }
@@ -93,10 +95,14 @@ namespace Core
                 double maxValue = 12.0;
 
                 if (!double.IsNaN(RodLength))
+                {
                     maxValue = RodLength * 0.2;
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _headLength = value;
             }
@@ -114,10 +120,14 @@ namespace Core
                 double maxValue = 3.0;
 
                 if (!double.IsNaN(HoleDistance))
+                {
                     maxValue = HoleDistance - maxValue;
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _holeRadius = value;
             }
@@ -135,7 +145,9 @@ namespace Core
                 const double maxValue = 2.0;
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _rodChamferDepth = value;
             }
@@ -153,7 +165,9 @@ namespace Core
                 const double maxValue = 1.2;
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _headChamferDepth = value;
             }
@@ -171,10 +185,14 @@ namespace Core
                 const double maxValue = 9.0;
 
                 if (!double.IsNaN(HoleRadius))
+                {
                     minValue = minValue + HoleRadius;
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _holeDistance = value;
             }
@@ -192,7 +210,9 @@ namespace Core
                 const double maxValue = 30.0;
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _rodAngleDepth = value;
             }
@@ -210,7 +230,9 @@ namespace Core
                 const double maxValue = 45.0;
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _headAngleDepth = value;
             }
@@ -228,10 +250,14 @@ namespace Core
                 double maxValue = 20.0;
 
                 if (!double.IsNaN(HeadRadius))
+                {
                     maxValue = HeadRadius * 0.8;
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _rodRadius = value;
             }
@@ -249,10 +275,14 @@ namespace Core
                 const double maxValue = 25.0;
 
                 if (!double.IsNaN(RodRadius))
+                {
                     minValue = RodRadius * 5 / 4;
+                }
 
                 if (!Validator(value, minValue, maxValue))
+                {
                     throw new ArgumentException("incorrect value");
+                }
 
                 _headRadius = value;
             }
@@ -268,15 +298,24 @@ namespace Core
         public static bool Validator(double value, double minValue, double maxValue)
         {
             if (value < minValue)
+            {
                 return false;
-            
+            }
+
             if (value > maxValue)
+            {
                 return false;
+            }
 
             return true;
         }
 
-        //TODO: XML?
+        //TODO: XML? +
+        /// <summary>
+        /// Устанавливает значение выбранного параметра
+        /// </summary>
+        /// <param name="parameter">наименование параметра</param>
+        /// <param name="value">значение помещаемое в параметр</param>
         public void SetValue(Parameters parameter, double value)
         {
             switch (parameter)
