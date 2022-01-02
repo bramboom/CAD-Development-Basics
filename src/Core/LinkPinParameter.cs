@@ -372,5 +372,59 @@ namespace Core
                 }
             }
         }
+
+        /// <summary>
+        /// Возвращает значение параметра
+        /// </summary>
+        /// <param name="parameter">наименование параметра</param>
+        /// <returns>значение параметра</returns>
+        public double GetValue(Parameters parameter)
+        {
+            switch (parameter)
+            {
+                case Parameters.RodLength:
+                {
+                    return RodLength;
+                }
+                case Parameters.HeadLength:
+                {
+                    return HeadLength;
+                }
+                case Parameters.HoleRadius:
+                {
+                    return HoleRadius;
+                }
+                case Parameters.RodChamfetDepth:
+                {
+                    return RodChamferDepth;
+                }
+                case Parameters.HeadChamferDepth:
+                {
+                    return HeadChamferDepth;
+                }
+                case Parameters.RodAngleDepth:
+                {
+                    return RodAngleDepth;
+                }
+                case Parameters.HeadAngleDepth:
+                {
+                    return HeadAngleDepth;
+                }
+                case Parameters.HoleDistance:
+                {
+                    return HoleDistance;
+                }
+                case Parameters.RodRadius:
+                {
+                    return RodRadius;
+                }
+                case Parameters.HeadRadius:
+                {
+                    return HeadRadius;
+                }
+            }
+
+            return double.NaN;
+        }
     }
 }
