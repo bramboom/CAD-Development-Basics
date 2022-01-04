@@ -245,7 +245,7 @@
             this.textBoxHeadRadius.Text = "5";
             this.toolTip.SetToolTip(this.textBoxHeadRadius, "Параметр J (радиус шляпки) не должен быть меньше 1,25 параметра I (радиус стержня" +
         ").");
-            this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.textBoxHeadRadius_TextChanged);
+            this.textBoxHeadRadius.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBoxRodRadius
             // 
@@ -256,7 +256,7 @@
             this.textBoxRodRadius.TabIndex = 4;
             this.textBoxRodRadius.Text = "4";
             this.toolTip.SetToolTip(this.textBoxRodRadius, "Параметр I (радиус стержня) не должен превышать 0,8 параметра J (радиус шляпки).");
-            this.textBoxRodRadius.TextChanged += new System.EventHandler(this.textBoxRodRadius_TextChanged);
+            this.textBoxRodRadius.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBoxHoleDistance
             // 
@@ -268,7 +268,7 @@
             this.textBoxHoleDistance.Text = "4";
             this.toolTip.SetToolTip(this.textBoxHoleDistance, "Параметр F (расстояние до отверстия) не должен быть меньше параметра C (радиус от" +
         "верстия) + минимальное значение.");
-            this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.textBoxHoleDistance_TextChanged);
+            this.textBoxHoleDistance.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBoxHoleRadius
             // 
@@ -280,7 +280,7 @@
             this.textBoxHoleRadius.Text = "1";
             this.toolTip.SetToolTip(this.textBoxHoleRadius, "Параметр C (радиус отверстия) не должен превышать параметр F (расстояние до отвер" +
         "стия) - максимальное значение.");
-            this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.textBoxHoleRadius_TextChanged);
+            this.textBoxHoleRadius.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBoxHeadLength
             // 
@@ -292,7 +292,7 @@
             this.textBoxHeadLength.Text = "4";
             this.toolTip.SetToolTip(this.textBoxHeadLength, "Параметр B (длина шляпки) не должен превышать 0.2 параметра A (длина стержня).\r\n\r" +
         "\n");
-            this.textBoxHeadLength.TextChanged += new System.EventHandler(this.textBoxHeadLength_TextChanged);
+            this.textBoxHeadLength.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBoxRodLength
             // 
@@ -303,7 +303,7 @@
             this.textBoxRodLength.TabIndex = 0;
             this.textBoxRodLength.Text = "20";
             this.toolTip.SetToolTip(this.textBoxRodLength, " Параметр A (длина стержня) не должен быть меньше 5  параметров B (длины шляпки)");
-            this.textBoxRodLength.TextChanged += new System.EventHandler(this.textBoxRodLength_TextChanged);
+            this.textBoxRodLength.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // toolTip
             // 
@@ -372,7 +372,7 @@
             this.textBoxHeadAngleDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadAngleDepth.TabIndex = 3;
             this.textBoxHeadAngleDepth.Text = "15";
-            this.textBoxHeadAngleDepth.TextChanged += new System.EventHandler(this.textBoxHeadAngleDepth_TextChanged);
+            this.textBoxHeadAngleDepth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label19
             // 
@@ -413,7 +413,7 @@
             this.textBoxRodAngleDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodAngleDepth.TabIndex = 2;
             this.textBoxRodAngleDepth.Text = "15";
-            this.textBoxRodAngleDepth.TextChanged += new System.EventHandler(this.textBoxRodAngleDepth_TextChanged);
+            this.textBoxRodAngleDepth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label15
             // 
@@ -433,7 +433,7 @@
             this.textBoxHeadChamferDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeadChamferDepth.TabIndex = 1;
             this.textBoxHeadChamferDepth.Text = "0,5";
-            this.textBoxHeadChamferDepth.TextChanged += new System.EventHandler(this.textBoxHeadChamferDepth_TextChanged);
+            this.textBoxHeadChamferDepth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label16
             // 
@@ -453,7 +453,7 @@
             this.textBoxRodChamferDepth.Size = new System.Drawing.Size(100, 22);
             this.textBoxRodChamferDepth.TabIndex = 0;
             this.textBoxRodChamferDepth.Text = "0,5";
-            this.textBoxRodChamferDepth.TextChanged += new System.EventHandler(this.textBoxRodChamferDepth_TextChanged);
+            this.textBoxRodChamferDepth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // buttonBuild
             // 

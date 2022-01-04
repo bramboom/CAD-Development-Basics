@@ -45,16 +45,36 @@ namespace GUI
 
             _dictionary = new Dictionary<TextBox, KeyValuePair<Parameters, string>>
             {
-                {textBoxRodLength, new KeyValuePair<Parameters, string>(Parameters.RodLength, "\nДлина стержня")},
-                {textBoxHeadLength, new KeyValuePair<Parameters, string>(Parameters.HeadLength, "\nДлина шляпки")},
-                {textBoxHoleRadius, new KeyValuePair<Parameters, string>(Parameters.HoleRadius, "\nРадиус отверстия")},
-                {textBoxRodChamferDepth, new KeyValuePair<Parameters, string>(Parameters.RodChamfetDepth, "\nРастояние отверстия")},
-                {textBoxHeadChamferDepth, new KeyValuePair<Parameters, string>(Parameters.HeadChamferDepth, "\nРадиус стержня")},
-                {textBoxRodAngleDepth, new KeyValuePair<Parameters, string>(Parameters.RodAngleDepth, "\nРадиус шляпки")},
-                {textBoxHeadAngleDepth, new KeyValuePair<Parameters, string>(Parameters.HeadAngleDepth, "\nДлина фаски на стержне")},
-                {textBoxHoleDistance, new KeyValuePair<Parameters, string>(Parameters.HoleDistance, "\nДлина фаски на шляпке")},
-                {textBoxRodRadius, new KeyValuePair<Parameters, string>(Parameters.RodRadius, "\nУгол фаски на стержне")},
-                {textBoxHeadRadius, new KeyValuePair<Parameters, string>(Parameters.HeadRadius, "\nУгол фаски на шляпке")}
+                {textBoxRodLength, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.RodLength, "\nДлина стержня")},
+                {textBoxHeadLength, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HeadLength, "\nДлина шляпки")},
+                {textBoxHoleRadius, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HoleRadius, "\nРадиус отверстия")},
+                {textBoxRodChamferDepth, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.RodChamfetDepth, "\nРастояние отверстия")},
+                {textBoxHeadChamferDepth, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HeadChamferDepth, "\nРадиус стержня")},
+                {textBoxRodAngleDepth, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.RodAngleDepth, "\nРадиус шляпки")},
+                {textBoxHeadAngleDepth, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HeadAngleDepth, "\nДлина фаски на стержне")},
+                {textBoxHoleDistance, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HoleDistance, "\nДлина фаски на шляпке")},
+                {textBoxRodRadius, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.RodRadius, "\nУгол фаски на стержне")},
+                {textBoxHeadRadius, 
+                    new KeyValuePair<Parameters, string>
+                        (Parameters.HeadRadius, "\nУгол фаски на шляпке")}
             };
 
             InitParameters();
@@ -142,75 +162,16 @@ namespace GUI
             _parameter = new LinkPinParameter();
         }
 
-
-        //TODO: XML + устранить дублирование
-        private void textBoxRodLength_TextChanged(object sender, EventArgs e)
+        //TODO: XML + устранить дублирование +
+        /// <summary>
+        /// Событие при изменении содержимого TextBox
+        /// </summary>
+        /// <param name="sender">Отправитель события</param>
+        /// <param name="e">Данные события</param>
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            GetValueFromTextBox(textBoxRodLength, 
-                Parameters.RodLength);
-            InitParameters();
-        }
-
-        private void textBoxHeadLength_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHeadLength, 
-                Parameters.HeadLength);
-            InitParameters();
-        }
-
-        private void textBoxHoleRadius_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHoleRadius, 
-                Parameters.HoleRadius);
-            InitParameters();
-        }
-
-        private void textBoxHoleDistance_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHoleDistance, 
-                Parameters.HoleDistance);
-            InitParameters();
-        }
-
-        private void textBoxRodRadius_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxRodRadius, 
-                Parameters.RodRadius);
-            InitParameters();
-        }
-
-        private void textBoxHeadRadius_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHeadRadius, 
-                Parameters.HeadRadius);
-            InitParameters();
-        }
-
-        private void textBoxRodChamferDepth_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxRodChamferDepth, 
-                Parameters.RodChamfetDepth);
-            InitParameters();
-        }
-
-        private void textBoxHeadChamferDepth_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHeadChamferDepth, 
-                Parameters.HeadChamferDepth);
-            InitParameters();
-        }
-
-        private void textBoxRodAngleDepth_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxRodAngleDepth, 
-                Parameters.RodAngleDepth);
-            InitParameters();
-        }
-
-        private void textBoxHeadAngleDepth_TextChanged(object sender, EventArgs e)
-        {
-            GetValueFromTextBox(textBoxHeadAngleDepth, 
-                Parameters.HeadAngleDepth);
+            TextBox textBox = (TextBox)sender;
+            GetValueFromTextBox(textBox, _dictionary[textBox].Key);
             InitParameters();
         }
 
