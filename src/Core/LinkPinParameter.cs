@@ -295,7 +295,7 @@ namespace Core
         /// <param name="minValue">минимальное значение</param>
         /// <param name="maxValue">максимальное значение</param>
         /// <returns>корректное значение или нет</returns>
-        public static bool Validator(double value, double minValue, double maxValue)
+        private static bool Validator(double value, double minValue, double maxValue)
         {
             if (value < minValue)
             {
