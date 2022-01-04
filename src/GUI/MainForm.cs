@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -28,6 +29,11 @@ namespace GUI
         private readonly Color _errorColor = Color.DarkSalmon;
 
         /// <summary>
+        /// 
+        /// </summary>
+        private Dictionary<TextBox, KeyValuePair<Parameters, string>> _dictionary;
+
+        /// <summary>
         /// Конструктор главной формы
         /// </summary>
         public LinkPinPlugin()
@@ -36,6 +42,21 @@ namespace GUI
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             var path = Directory.GetCurrentDirectory();
             pictureBox.Image = Image.FromFile(path + "/img/img.JPG");
+
+            _dictionary = new Dictionary<TextBox, KeyValuePair<Parameters, string>>
+            {
+                {textBoxRodLength, new KeyValuePair<Parameters, string>(Parameters.RodLength, "\nДлина стержня")},
+                {textBoxHeadLength, new KeyValuePair<Parameters, string>(Parameters.HeadLength, "\nДлина шляпки")},
+                {textBoxHoleRadius, new KeyValuePair<Parameters, string>(Parameters.HoleRadius, "\nРадиус отверстия")},
+                {textBoxRodChamferDepth, new KeyValuePair<Parameters, string>(Parameters.RodChamfetDepth, "\nРастояние отверстия")},
+                {textBoxHeadChamferDepth, new KeyValuePair<Parameters, string>(Parameters.HeadChamferDepth, "\nРадиус стержня")},
+                {textBoxRodAngleDepth, new KeyValuePair<Parameters, string>(Parameters.RodAngleDepth, "\nРадиус шляпки")},
+                {textBoxHeadAngleDepth, new KeyValuePair<Parameters, string>(Parameters.HeadAngleDepth, "\nДлина фаски на стержне")},
+                {textBoxHoleDistance, new KeyValuePair<Parameters, string>(Parameters.HoleDistance, "\nДлина фаски на шляпке")},
+                {textBoxRodRadius, new KeyValuePair<Parameters, string>(Parameters.RodRadius, "\nУгол фаски на стержне")},
+                {textBoxHeadRadius, new KeyValuePair<Parameters, string>(Parameters.HeadRadius, "\nУгол фаски на шляпке")}
+            };
+
             InitParameters();
         }
 
@@ -58,8 +79,13 @@ namespace GUI
         {
             textBox.BackColor = Color.White;
 
-            if (textBox.Text == "") return;
+            if (textBox.Text == "")
+            {
+                return;
+            }
+
             double value ;
+            
             if (!double.TryParse(textBox.Text, out value))
             {
                 //TODO: to const +
@@ -83,27 +109,11 @@ namespace GUI
         /// </summary>
         private void InitParameters()
         {
-            //TODO: Убрать дублирование
-            GetValueFromTextBox(textBoxRodLength, 
-                Parameters.RodLength);
-            GetValueFromTextBox(textBoxHeadLength, 
-                Parameters.HeadLength);
-            GetValueFromTextBox(textBoxHoleRadius, 
-                Parameters.HoleRadius);
-            GetValueFromTextBox(textBoxHoleDistance, 
-                Parameters.HoleDistance);
-            GetValueFromTextBox(textBoxRodRadius, 
-                Parameters.RodRadius);
-            GetValueFromTextBox(textBoxHeadRadius, 
-                Parameters.HeadRadius);
-            GetValueFromTextBox(textBoxRodChamferDepth, 
-                Parameters.RodChamfetDepth);
-            GetValueFromTextBox(textBoxHeadChamferDepth, 
-                Parameters.HeadChamferDepth);
-            GetValueFromTextBox(textBoxRodAngleDepth, 
-                Parameters.RodAngleDepth);
-            GetValueFromTextBox(textBoxHeadAngleDepth, 
-                Parameters.HeadAngleDepth);
+            //TODO: Убрать дублирование +
+            foreach (var pair in _dictionary)
+            {
+                GetValueFromTextBox(pair.Key, pair.Value.Key);
+            }
         }
 
         /// <summary>
@@ -117,22 +127,18 @@ namespace GUI
             //TODO: to const +
             if (textBox.BackColor == _errorColor ||
                 textBox.Text == "")
+            {
                 error += errorName;
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            //TODO: Убрать дублирование
-            ClearTextBox(textBoxRodLength);
-            ClearTextBox(textBoxHeadLength);
-            ClearTextBox(textBoxHoleRadius);
-            ClearTextBox(textBoxRodChamferDepth);
-            ClearTextBox(textBoxHeadChamferDepth);
-            ClearTextBox(textBoxRodAngleDepth);
-            ClearTextBox(textBoxHeadAngleDepth);
-            ClearTextBox(textBoxHoleDistance);
-            ClearTextBox(textBoxRodRadius);
-            ClearTextBox(textBoxHeadRadius);
+            //TODO: Убрать дублирование +
+            foreach (var pair in _dictionary)
+            {
+                ClearTextBox(pair.Key);
+            }
             _parameter = new LinkPinParameter();
         }
 
@@ -211,27 +217,11 @@ namespace GUI
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             string error = "Параметры введены неверно:";
-            //TODO: Убрать дублирование
-            AddError(ref error, textBoxRodLength, 
-                "\nДлина стержня");
-            AddError(ref error, textBoxHeadLength, 
-                "\nДлина шляпки");
-            AddError(ref error, textBoxHoleRadius, 
-                "\nРадиус отверстия");
-            AddError(ref error, textBoxHoleDistance, 
-                "\nРастояние отверстия");
-            AddError(ref error, textBoxRodRadius, 
-                "\nРадиус стержня");
-            AddError(ref error, textBoxHeadRadius, 
-                "\nРадиус шляпки");
-            AddError(ref error, textBoxRodChamferDepth, 
-                "\nДлина фаски на стержне");
-            AddError(ref error, textBoxHeadChamferDepth, 
-                "\nДлина фаски на шляпке");
-            AddError(ref error, textBoxRodAngleDepth, 
-                "\nУгол фаски на стержне");
-            AddError(ref error, textBoxHeadAngleDepth, 
-                "\nУгол фаски на шляпке");
+            //TODO: Убрать дублирование +
+            foreach (var pair in _dictionary)
+            {
+                AddError(ref error, pair.Key, pair.Value.Value);
+            }
 
             if (error != "Параметры введены неверно:")
             {
