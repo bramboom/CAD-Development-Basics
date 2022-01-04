@@ -21,7 +21,12 @@ namespace GUI
         /// Поле, хранящее объект потключения к компасу
         /// </summary>
         private Connecter _connecter = new Connecter();
- 
+
+        /// <summary>
+        /// Константа, хранящая цвет ошибки
+        /// </summary>
+        private readonly Color _errorColor = Color.DarkSalmon;
+
         /// <summary>
         /// Конструктор главной формы
         /// </summary>
@@ -57,8 +62,8 @@ namespace GUI
             double value ;
             if (!double.TryParse(textBox.Text, out value))
             {
-                //TODO: to const
-                textBox.BackColor = Color.DarkSalmon;
+                //TODO: to const +
+                textBox.BackColor = _errorColor;
                 return;
             }
 
@@ -68,8 +73,8 @@ namespace GUI
             }
             catch (ArgumentException)
             {
-                //TODO: to const
-                textBox.BackColor = Color.DarkSalmon;
+                //TODO: to const +
+                textBox.BackColor = _errorColor;
             }
         }
 
@@ -109,8 +114,8 @@ namespace GUI
         /// <param name="errorName">наименование параметра</param>
         private void AddError(ref string error, TextBox textBox, string errorName)
         {
-            //TODO: to const
-            if (textBox.BackColor == Color.DarkSalmon ||
+            //TODO: to const +
+            if (textBox.BackColor == _errorColor ||
                 textBox.Text == "")
                 error += errorName;
         }
