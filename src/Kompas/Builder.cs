@@ -26,6 +26,7 @@ namespace Kompas
                 parameters.HeadChamferDepth, parameters.HeadAngleDepth);
             ChampherDef(part, 3, 
                 parameters.RodChamferDepth, parameters.RodAngleDepth);
+            CreateCutExtraction(part, parameters);
         }
 
         /// <summary>
@@ -170,6 +171,38 @@ namespace Kompas
             sketchDefinition.EndEdit();
             BossExtrusion(part, sketch, 
                 -detailParameters.HeadLength);
+        }
+
+        /// <summary>
+        /// Выдавливание выреза под флажок
+        /// </summary>
+        /// <param name="part">файл</param>
+        /// <param name="parameters">параметры детали</param>
+        private void CreateCutExtraction(ksPart part, LinkPinParameter parameters)
+        {
+            ksEntity plane =
+                part.GetDefaultEntity((int)Obj3dType.o3d_planeYOZ);
+            ksEntity sketch =
+                part.NewEntity((int)Obj3dType.o3d_sketch);
+            ksSketchDefinition sketchDefinition =
+                sketch.GetDefinition();
+            sketchDefinition.SetPlane(plane);
+            sketch.Create();
+            ksDocument2D document2DRod =
+                sketchDefinition.BeginEdit();
+            var y1 = - parameters.RodLength;
+            var y2 = - (parameters.RodLength - parameters.HoleDistance * 2);
+            var z1 = parameters.RodRadius / 3;
+            var z2 = -z1;
+            document2DRod.ksLineSeg(y1, z1, y1, z2, 1);
+            document2DRod.ksLineSeg(y1, z1, y2, z1, 1);
+            document2DRod.ksLineSeg(y1, z2, y2, z2, 1);
+            document2DRod.ksLineSeg(y2, z1, y2, z2, 1);
+            sketchDefinition.EndEdit();
+            CutExtrusion(part, sketch,
+                parameters.RodRadius);
+            CutExtrusion(part, sketch,
+                -parameters.RodRadius);
         }
     }
 }
