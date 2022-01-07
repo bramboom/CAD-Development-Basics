@@ -8,7 +8,7 @@
         RodLength,
         HeadLength,
         HoleRadius,
-        RodChamfetDepth,
+        RodChamferDepth,
         HeadChamferDepth,
         RodAngleDepth,
         HeadAngleDepth,

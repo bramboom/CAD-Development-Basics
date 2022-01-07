@@ -289,6 +289,11 @@ namespace Core
         }
 
         /// <summary>
+        /// Возвращает и задает флаг для выреза
+        /// </summary>
+        public bool Cutting { get; set;}
+
+        /// <summary>
         /// Проверяет, входит ли значение параметра в нужный интервал
         /// </summary>
         /// <param name="value">значение параметра</param>
@@ -335,7 +340,7 @@ namespace Core
                     HoleRadius = value;
                     break;
                 }
-                case Parameters.RodChamfetDepth:
+                case Parameters.RodChamferDepth:
                 {
                     RodChamferDepth = value;
                     break;
@@ -394,7 +399,7 @@ namespace Core
                 {
                     return HoleRadius;
                 }
-                case Parameters.RodChamfetDepth:
+                case Parameters.RodChamferDepth:
                 {
                     return RodChamferDepth;
                 }

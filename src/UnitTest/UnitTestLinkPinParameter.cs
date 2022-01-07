@@ -34,9 +34,9 @@ namespace UnitTest
         [TestCase(Core.Parameters.HoleDistance, 4, 
             TestName = "SetValue значение "
                 + "входящее в диапазон HoleDistance")]
-        [TestCase(Core.Parameters.RodChamfetDepth, 0.5, 
+        [TestCase(Core.Parameters.RodChamferDepth, 0.5, 
             TestName = "SetValue значение "
-                + "входящее в диапазон RodChamfetDepth")]
+                + "входящее в диапазон RodChamferDepth")]
         [TestCase(Core.Parameters.HeadChamferDepth, 0.5, 
             TestName = "SetValue значение "
                 + "входящее в диапазон HeadChamferDepth")]
@@ -101,12 +101,12 @@ namespace UnitTest
         [TestCase(Core.Parameters.HeadAngleDepth, 100, 
             TestName = "SetValue значение больше "
                 + "максимального для HeadAngleDepth")]
-        [TestCase(Core.Parameters.RodChamfetDepth, 0, 
+        [TestCase(Core.Parameters.RodChamferDepth, 0, 
             TestName = "SetValue значение меньше "
-                + "минимального для RodChamfetDepth")]
-        [TestCase(Core.Parameters.RodChamfetDepth, 100, 
+                + "минимального для RodChamferDepth")]
+        [TestCase(Core.Parameters.RodChamferDepth, 100, 
             TestName = "SetValue значение больше "
-                + "максимального для RodChamfetDepth")]
+                + "максимального для RodChamferDepth")]
         [TestCase(Core.Parameters.HeadChamferDepth, 0, 
             TestName = "SetValue значение меньше "
                 + "минимального для HeadChamferDepth")]
@@ -140,9 +140,9 @@ namespace UnitTest
         [TestCase(Core.Parameters.HoleRadius, 1,
             TestName = "GetValue возвращение "
                        + "значения из свойства HoleRadius")]
-        [TestCase(Core.Parameters.RodChamfetDepth, 0.5,
+        [TestCase(Core.Parameters.RodChamferDepth, 0.5,
             TestName = "GetValue возвращение "
-                       + "значения из свойства RodChamfetDepth")]
+                       + "значения из свойства RodChamferDepth")]
         [TestCase(Core.Parameters.HeadChamferDepth, 0.5,
             TestName = "GetValue возвращение "
                        + "значения из свойства HeadChamferDepth")]
@@ -222,6 +222,26 @@ namespace UnitTest
             Assert.DoesNotThrow(
                 () => parameters.SetValue(firstParameter, firstValue), 
                 $"Значение не присвоилось свойству {firstParameter}");
+        }
+
+        [TestCase(TestName = "SetValue для свойства Cutting")]
+        public void SetValue_Cutting()
+        {
+            Assert.DoesNotThrow(
+                () => Parameters.Cutting = true, 
+                "Ошибка при попытке присвоения значения");
+        }
+
+        [TestCase(TestName = "GetValue из свойства Cutting")]
+        public void GetValue_Cutting()
+        {
+            var parameters = Parameters;
+
+            parameters.Cutting = true;
+            var actual = parameters.Cutting;
+
+            Assert.AreEqual(true, actual, 
+                "Возвращенное значение не соответствует начальному");
         }
     }
 }

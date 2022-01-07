@@ -56,7 +56,7 @@ namespace GUI
                         (Parameters.HoleRadius, "\nРадиус отверстия")},
                 {textBoxRodChamferDepth, 
                     new KeyValuePair<Parameters, string>
-                        (Parameters.RodChamfetDepth, "\nРастояние отверстия")},
+                        (Parameters.RodChamferDepth, "\nРастояние отверстия")},
                 {textBoxHeadChamferDepth, 
                     new KeyValuePair<Parameters, string>
                         (Parameters.HeadChamferDepth, "\nРадиус стержня")},
@@ -76,7 +76,6 @@ namespace GUI
                     new KeyValuePair<Parameters, string>
                         (Parameters.HeadRadius, "\nУгол фаски на шляпке")}
             };
-
             InitParameters();
         }
 
@@ -134,6 +133,7 @@ namespace GUI
             {
                 GetValueFromTextBox(pair.Key, pair.Value.Key);
             }
+            _parameter.Cutting = radioButton.Checked;
         }
 
         /// <summary>
@@ -152,6 +152,11 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Собыие при нажатии кнопки очистки
+        /// </summary>
+        /// <param name="sender">Отправитель события</param>
+        /// <param name="e">Данные события</param>
         private void buttonClear_Click(object sender, EventArgs e)
         {
             //TODO: Убрать дублирование +
@@ -175,6 +180,11 @@ namespace GUI
             InitParameters();
         }
 
+        /// <summary>
+        /// Событие при надатии кнопки построения
+        /// </summary>
+        /// <param name="sender">Отправитель события</param>
+        /// <param name="e">Данные события</param>
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             string error = "Параметры введены неверно:";
@@ -195,6 +205,16 @@ namespace GUI
             Builder builder = new Builder();
 
             builder.Build(_connecter.KompasObject, _parameter);
+        }
+
+        /// <summary>
+        /// Событие при изменении состояния радиокнопки
+        /// </summary>
+        /// <param name="sender">Отправитель события</param>
+        /// <param name="e">Данные события</param>
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _parameter.Cutting = radioButton.Checked;
         }
     }
 }

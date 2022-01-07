@@ -22,11 +22,14 @@ namespace Kompas
             CreateHead(part, parameters);
             CreateRod(part, parameters);
             CreateHole(part, parameters);
-            ChampherDef(part, 2, 
+            ChamferDef(part, 2, 
                 parameters.HeadChamferDepth, parameters.HeadAngleDepth);
-            ChampherDef(part, 3, 
+            ChamferDef(part, 3, 
                 parameters.RodChamferDepth, parameters.RodAngleDepth);
-            CreateCutExtraction(part, parameters);
+            if (parameters.Cutting)
+            {
+                CreateCutting(part, parameters);
+            }
         }
 
         /// <summary>
@@ -35,7 +38,7 @@ namespace Kompas
         /// <param name="part">файл</param>
         /// <param name="sketch">эскиз</param>
         /// <param name="height">высота фигуры</param>
-        public void BossExtrusion(ksPart part, ksEntity sketch, double height)
+        private void BossExtrusion(ksPart part, ksEntity sketch, double height)
         {
             ksEntity extrude = 
                 part.NewEntity((int) Obj3dType.o3d_bossExtrusion);
@@ -57,7 +60,7 @@ namespace Kompas
         /// <param name="index">индекс грани</param>
         /// <param name="depth">длина</param>
         /// <param name="angle">угол</param>
-        public void ChampherDef(ksPart part, int index, double depth, double angle)
+        private void ChamferDef(ksPart part, int index, double depth, double angle)
         {
             ksEntityCollection collection = 
                 (ksEntityCollection)part.EntityCollection((short)Obj3dType.o3d_face);
@@ -75,12 +78,12 @@ namespace Kompas
         }
 
         /// <summary>
-        /// Выдавливание объекта
+        /// Выдавливание выреза
         /// </summary>
         /// <param name="part">файл</param>
         /// <param name="sketch">эскиз</param>
         /// <param name="height">высота фигуры</param>
-        public void CutExtrusion(ksPart part, ksEntity sketch, double height)
+        private void CutExtrusion(ksPart part, ksEntity sketch, double height)
         {
             ksEntity cutExtrusion =
                 (ksEntity)part.NewEntity((short)Obj3dType.o3d_cutExtrusion);
@@ -178,7 +181,7 @@ namespace Kompas
         /// </summary>
         /// <param name="part">файл</param>
         /// <param name="parameters">параметры детали</param>
-        private void CreateCutExtraction(ksPart part, LinkPinParameter parameters)
+        private void CreateCutting(ksPart part, LinkPinParameter parameters)
         {
             ksEntity plane =
                 part.GetDefaultEntity((int)Obj3dType.o3d_planeYOZ);
