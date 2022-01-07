@@ -66,7 +66,7 @@
             this.textBoxRodChamferDepth = new System.Windows.Forms.TextBox();
             this.buttonBuild = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.radioButton = new System.Windows.Forms.RadioButton();
+            this.checkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBoxMain.SuspendLayout();
             this.groupBoxDepthParameter.SuspendLayout();
@@ -476,23 +476,22 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // radioButton
+            // checkBox
             // 
-            this.radioButton.AutoSize = true;
-            this.radioButton.Location = new System.Drawing.Point(21, 382);
-            this.radioButton.Name = "radioButton";
-            this.radioButton.Size = new System.Drawing.Size(116, 17);
-            this.radioButton.TabIndex = 5;
-            this.radioButton.TabStop = true;
-            this.radioButton.Text = "Выполнить вырез";
-            this.radioButton.UseVisualStyleBackColor = true;
-            this.radioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(13, 382);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(117, 17);
+            this.checkBox.TabIndex = 5;
+            this.checkBox.Text = "Выполнить вырез";
+            this.checkBox.UseVisualStyleBackColor = true;
+            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // LinkPinPlugin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(931, 469);
-            this.Controls.Add(this.radioButton);
+            this.Controls.Add(this.checkBox);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonBuild);
             this.Controls.Add(this.groupBoxDepthParameter);
@@ -556,7 +555,7 @@
         private System.Windows.Forms.TextBox textBoxRodChamferDepth;
         private System.Windows.Forms.Button buttonBuild;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.RadioButton radioButton;
+        private System.Windows.Forms.CheckBox checkBox;
     }
 }
 

@@ -133,7 +133,7 @@ namespace GUI
             {
                 GetValueFromTextBox(pair.Key, pair.Value.Key);
             }
-            _parameter.Cutting = radioButton.Checked;
+            _parameter.Cutting = false;
         }
 
         /// <summary>
@@ -208,13 +208,13 @@ namespace GUI
         }
 
         /// <summary>
-        /// Событие при изменении состояния радиокнопки
+        /// Событие при изменении состояния чекбокса
         /// </summary>
         /// <param name="sender">Отправитель события</param>
         /// <param name="e">Данные события</param>
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            _parameter.Cutting = radioButton.Checked;
+            _parameter.Cutting = checkBox.Checked;
         }
     }
 }
