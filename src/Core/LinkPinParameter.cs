@@ -68,7 +68,7 @@ namespace Core
                 double minValue = 12.0; 
                 const double maxValue = 60.0;
 
-                //TODO: скобочки +для LinkPinParameter, MainForm
+                //TODO: скобочки +для LinkPinParameter, MainForm, Kompas
                 if (!double.IsNaN(HeadLength))
                 {
                     minValue = HeadLength * 5;
