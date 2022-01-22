@@ -21,17 +21,18 @@ namespace GUI
         /// <summary>
         /// Поле, хранящее объект потключения к компасу
         /// </summary>
-        private Connecter _connecter = new Connecter();
+        private readonly Connecter _connecter = new Connecter();
 
         /// <summary>
         /// Константа, хранящая цвет ошибки
         /// </summary>
         private readonly Color _errorColor = Color.DarkSalmon;
 
+        //TODO: 
         /// <summary>
         /// 
         /// </summary>
-        private Dictionary<TextBox, KeyValuePair<Parameters, string>> _dictionary;
+        private readonly Dictionary<TextBox, KeyValuePair<Parameters, string>> _dictionary;
 
         /// <summary>
         /// Конструктор главной формы
@@ -103,11 +104,10 @@ namespace GUI
                 return;
             }
 
-            double value ;
+            double value;
             
             if (!double.TryParse(textBox.Text, out value))
             {
-                //TODO: to const +
                 textBox.BackColor = _errorColor;
                 return;
             }
@@ -118,7 +118,6 @@ namespace GUI
             }
             catch (ArgumentException)
             {
-                //TODO: to const +
                 textBox.BackColor = _errorColor;
             }
         }
@@ -128,7 +127,6 @@ namespace GUI
         /// </summary>
         private void InitParameters()
         {
-            //TODO: Убрать дублирование +
             foreach (var pair in _dictionary)
             {
                 GetValueFromTextBox(pair.Key, pair.Value.Key);
@@ -144,7 +142,6 @@ namespace GUI
         /// <param name="errorName">наименование параметра</param>
         private void AddError(ref string error, TextBox textBox, string errorName)
         {
-            //TODO: to const +
             if (textBox.BackColor == _errorColor ||
                 textBox.Text == "")
             {
@@ -159,15 +156,13 @@ namespace GUI
         /// <param name="e">Данные события</param>
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            //TODO: Убрать дублирование +
             foreach (var pair in _dictionary)
             {
                 ClearTextBox(pair.Key);
             }
             _parameter = new LinkPinParameter();
         }
-
-        //TODO: XML + устранить дублирование +
+        
         /// <summary>
         /// Событие при изменении содержимого TextBox
         /// </summary>
@@ -180,6 +175,7 @@ namespace GUI
             InitParameters();
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Событие при надатии кнопки построения
         /// </summary>
@@ -187,10 +183,11 @@ namespace GUI
         /// <param name="e">Данные события</param>
         private void buttonBuild_Click(object sender, EventArgs e)
         {
+            // todo: const
             string error = "Параметры введены неверно:";
-            //TODO: Убрать дублирование +
             foreach (var pair in _dictionary)
             {
+                //TODO: вынести из метода
                 AddError(ref error, pair.Key, pair.Value.Value);
             }
 
@@ -207,6 +204,7 @@ namespace GUI
             builder.Build(_connecter.KompasObject, _parameter);
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Событие при изменении состояния чекбокса
         /// </summary>

@@ -314,8 +314,7 @@ namespace Core
 
             return true;
         }
-
-        //TODO: XML? +
+        
         /// <summary>
         /// Устанавливает значение выбранного параметра
         /// </summary>
