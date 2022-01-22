@@ -28,9 +28,9 @@ namespace GUI
         /// </summary>
         private readonly Color _errorColor = Color.DarkSalmon;
 
-        //TODO: 
+        //TODO: +
         /// <summary>
-        /// 
+        /// Словарь связывающий текстовое поле с парой параметр - сообщение об ошибке
         /// </summary>
         private readonly Dictionary<TextBox, KeyValuePair<Parameters, string>> _dictionary;
 
@@ -77,6 +77,26 @@ namespace GUI
                     new KeyValuePair<Parameters, string>
                         (Parameters.HeadRadius, "\nУгол фаски на шляпке")}
             };
+
+            toolTip.SetToolTip(
+                textBoxRodLength, "Параметр A (длина стержня) "
+                + "не должен быть меньше 5  параметров B (длины шляпки)");
+            toolTip.SetToolTip(
+                textBoxHeadLength, "Параметр B (длина шляпки) "
+                + "не должен превышать 0.2 параметра A (длина стержня).");
+            toolTip.SetToolTip(
+                textBoxHoleRadius, "Параметр C (радиус отверстия) "
+                + "не должен превышать параметр F (расстояние до отверстия) - максимальное значение.");
+            toolTip.SetToolTip(
+                textBoxHoleDistance, "Параметр F (расстояние до отверстия) "
+                + "не должен быть меньше параметра C (радиус отверстия) + минимальное значение.");
+            toolTip.SetToolTip(
+                textBoxRodRadius, "Параметр I (радиус стержня) "
+                + "не должен превышать 0,8 параметра J (радиус шляпки).");
+            toolTip.SetToolTip(
+                textBoxHeadRadius, "Параметр I (радиус стержня) "
+                + "не должен превышать 0,8 параметра J (радиус шляпки).");
+
             InitParameters();
         }
 
@@ -135,25 +155,10 @@ namespace GUI
         }
 
         /// <summary>
-        /// Добавляет наименование параметра к описанию ошибки
+        /// Собыие для <see cref="buttonClear"/> при нажатии на нее
         /// </summary>
-        /// <param name="error">описание ошибки</param>
-        /// <param name="textBox">текстовое поле</param>
-        /// <param name="errorName">наименование параметра</param>
-        private void AddError(ref string error, TextBox textBox, string errorName)
-        {
-            if (textBox.BackColor == _errorColor ||
-                textBox.Text == "")
-            {
-                error += errorName;
-            }
-        }
-
-        /// <summary>
-        /// Собыие при нажатии кнопки очистки
-        /// </summary>
-        /// <param name="sender">Отправитель события</param>
-        /// <param name="e">Данные события</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonClear_Click(object sender, EventArgs e)
         {
             foreach (var pair in _dictionary)
@@ -164,10 +169,10 @@ namespace GUI
         }
         
         /// <summary>
-        /// Событие при изменении содержимого TextBox
+        /// Событие для <see cref="TextBox"/> при изменении текста
         /// </summary>
-        /// <param name="sender">Отправитель события</param>
-        /// <param name="e">Данные события</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -175,25 +180,32 @@ namespace GUI
             InitParameters();
         }
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
-        /// Событие при надатии кнопки построения
+        /// Событие для <see cref="buttonBuild"/> при нажатии на нее
         /// </summary>
-        /// <param name="sender">Отправитель события</param>
-        /// <param name="e">Данные события</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBuild_Click(object sender, EventArgs e)
         {
-            // todo: const
-            string error = "Параметры введены неверно:";
+            // todo: const or use bool +
+            bool isAnError = true;
+            string errorMessage = "Параметры введены неверно:";
             foreach (var pair in _dictionary)
             {
-                //TODO: вынести из метода
-                AddError(ref error, pair.Key, pair.Value.Value);
+                //TODO: вынести из метода +
+                if (pair.Key.BackColor == _errorColor ||
+                    pair.Key.Text == "")
+                {
+                    errorMessage += pair.Value.Value;
+                    isAnError = false;
+                }
             }
 
-            if (error != "Параметры введены неверно:")
+            if (!isAnError)
             {
-                MessageBox.Show(error, @"Warning");
+                MessageBox.Show(errorMessage, @"Ошибка", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -204,12 +216,12 @@ namespace GUI
             builder.Build(_connecter.KompasObject, _parameter);
         }
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
-        /// Событие при изменении состояния чекбокса
+        /// Событие для <see cref="checkBox"/> при изменении его состояния
         /// </summary>
-        /// <param name="sender">Отправитель события</param>
-        /// <param name="e">Данные события</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
             _parameter.Cutting = checkBox.Checked;

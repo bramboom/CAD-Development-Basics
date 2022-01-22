@@ -94,6 +94,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\error.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\img.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
