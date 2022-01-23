@@ -189,7 +189,7 @@ namespace GUI
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             // todo: const or use bool +
-            bool isAnError = true;
+            bool isAnError = false;
             string errorMessage = "Параметры введены неверно:";
             foreach (var pair in _dictionary)
             {
@@ -198,11 +198,11 @@ namespace GUI
                     pair.Key.Text == "")
                 {
                     errorMessage += pair.Value.Value;
-                    isAnError = false;
+                    isAnError = true;
                 }
             }
 
-            if (!isAnError)
+            if (isAnError)
             {
                 MessageBox.Show(errorMessage, @"Ошибка", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -15,7 +15,6 @@ namespace UnitTest
 		/// </summary>
 		private LinkPinParameter Parameters => new LinkPinParameter();
 
-        //TODO: Убрать дубли +
         [TestCase(Core.Parameters.RodLength, 20, 
             TestName = "SetValue значение "
                 + "входящее в диапазон RodLength")]
