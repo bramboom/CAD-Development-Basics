@@ -83,7 +83,8 @@ namespace Kompas
         /// <param name="part">файл</param>
         /// <param name="sketch">эскиз</param>
         /// <param name="height">высота фигуры</param>
-        private void CutExtrusion(ksPart part, ksEntity sketch, double height)
+        /// <param name="endType">тип построения</param>
+        private void CutExtrusion(ksPart part, ksEntity sketch, double height, short endType)
         {
             ksEntity cutExtrusion =
                 (ksEntity)part.NewEntity((short)Obj3dType.o3d_cutExtrusion);
@@ -92,9 +93,8 @@ namespace Kompas
             ksExtrusionParam extrusionParam =
                 (ksExtrusionParam)extrusionDefinition.ExtrusionParam();
             extrusionDefinition.SetSketch(sketch);
-            extrusionParam.direction = 
-                (short)Direction_Type.dtNormal;
-            extrusionParam.typeNormal = 
+            extrusionParam.direction = endType;
+                extrusionParam.typeNormal = 
                 (short)End_Type.etBlind;
             extrusionParam.depthNormal = height;
             cutExtrusion.Create();
@@ -147,9 +147,7 @@ namespace Kompas
                 detailParameters.HoleRadius, 1);
             sketchDefinition.EndEdit();
             CutExtrusion(part, sketch, 
-                detailParameters.RodRadius);
-            CutExtrusion(part, sketch, 
-                -detailParameters.RodRadius);
+                detailParameters.RodRadius, 2);
         }
 
         /// <summary>
@@ -203,9 +201,7 @@ namespace Kompas
             document2DRod.ksLineSeg(y2, z1, y2, z2, 1);
             sketchDefinition.EndEdit();
             CutExtrusion(part, sketch,
-                parameters.RodRadius);
-            CutExtrusion(part, sketch,
-                -parameters.RodRadius);
+                parameters.RodRadius, 2);
         }
     }
 }
