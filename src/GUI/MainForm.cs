@@ -27,8 +27,7 @@ namespace GUI
         /// Константа, хранящая цвет ошибки
         /// </summary>
         private readonly Color _errorColor = Color.DarkSalmon;
-
-        //TODO: +
+        
         /// <summary>
         /// Словарь связывающий текстовое поле с парой параметр - сообщение об ошибке
         /// </summary>
@@ -180,7 +179,7 @@ namespace GUI
             InitParameters();
         }
 
-        //TODO: RSDN +
+        //TODO: RSDN
         /// <summary>
         /// Событие для <see cref="buttonBuild"/> при нажатии на нее
         /// </summary>
@@ -188,12 +187,10 @@ namespace GUI
         /// <param name="e"></param>
         private void buttonBuild_Click(object sender, EventArgs e)
         {
-            // todo: const or use bool +
             bool isAnError = false;
             string errorMessage = "Параметры введены неверно:";
             foreach (var pair in _dictionary)
             {
-                //TODO: вынести из метода +
                 if (pair.Key.BackColor == _errorColor ||
                     pair.Key.Text == "")
                 {
@@ -216,7 +213,7 @@ namespace GUI
             builder.Build(_connecter.KompasObject, _parameter);
         }
 
-        //TODO: RSDN +
+        //TODO: RSDN
         /// <summary>
         /// Событие для <see cref="checkBox"/> при изменении его состояния
         /// </summary>
