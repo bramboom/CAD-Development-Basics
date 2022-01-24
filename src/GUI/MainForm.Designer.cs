@@ -455,7 +455,7 @@
             this.buttonBuild.TabIndex = 3;
             this.buttonBuild.Text = "Построить";
             this.buttonBuild.UseVisualStyleBackColor = true;
-            this.buttonBuild.Click += new System.EventHandler(this.buttonBuild_Click);
+            this.buttonBuild.Click += new System.EventHandler(this.ButtonBuild_Click);
             // 
             // buttonClear
             // 
@@ -465,7 +465,7 @@
             this.buttonClear.TabIndex = 4;
             this.buttonClear.Text = "Очистить";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // checkBox
             // 
@@ -476,7 +476,7 @@
             this.checkBox.TabIndex = 5;
             this.checkBox.Text = "Выполнить вырез";
             this.checkBox.UseVisualStyleBackColor = true;
-            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            this.checkBox.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // LinkPinPlugin
             // 

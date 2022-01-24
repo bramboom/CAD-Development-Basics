@@ -158,7 +158,7 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             foreach (var pair in _dictionary)
             {
@@ -179,13 +179,13 @@ namespace GUI
             InitParameters();
         }
 
-        //TODO: RSDN
+        //TODO: RSDN+
         /// <summary>
         /// Событие для <see cref="buttonBuild"/> при нажатии на нее
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonBuild_Click(object sender, EventArgs e)
+        private void ButtonBuild_Click(object sender, EventArgs e)
         {
             bool isAnError = false;
             string errorMessage = "Параметры введены неверно:";
@@ -213,13 +213,13 @@ namespace GUI
             builder.Build(_connecter.KompasObject, _parameter);
         }
 
-        //TODO: RSDN
+        //TODO: RSDN+
         /// <summary>
         /// Событие для <see cref="checkBox"/> при изменении его состояния
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void checkBox_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             _parameter.Cutting = checkBox.Checked;
         }
