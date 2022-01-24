@@ -178,8 +178,7 @@ namespace GUI
             GetValueFromTextBox(textBox, _dictionary[textBox].Key);
             InitParameters();
         }
-
-        //TODO: RSDN+
+        
         /// <summary>
         /// Событие для <see cref="buttonBuild"/> при нажатии на нее
         /// </summary>
@@ -212,8 +211,7 @@ namespace GUI
 
             builder.Build(_connecter.KompasObject, _parameter);
         }
-
-        //TODO: RSDN+
+        
         /// <summary>
         /// Событие для <see cref="checkBox"/> при изменении его состояния
         /// </summary>
